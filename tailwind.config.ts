@@ -28,7 +28,8 @@ export default {
 				primary: "#883E18",
 			},
 			backgroundImage: {
-				sparkle: "url('/public/sparkle.png')",
+				sparkle:
+					"url('https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884645/developers_meb2ij.png')",
 			},
 		},
 	},
