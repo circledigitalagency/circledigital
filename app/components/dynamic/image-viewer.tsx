@@ -17,6 +17,7 @@ import {
 	ZoomIn,
 	ZoomOut,
 	RotateCw,
+	FileText,
 } from "lucide-react";
 
 interface ImageViewerProps {
@@ -129,7 +130,7 @@ export default function ImageViewer({
 				<CardHeader className="pb-3">
 					<div className="flex flex-col gap-3">
 						<div className="flex items-center gap-2">
-							<ImageIcon className="w-5 h-5 text-muted-foreground" />
+							<FileText className="w-5 h-5 text-muted-foreground" />
 							<h3 className="text-lg font-semibold">{title}</h3>
 						</div>
 					</div>
@@ -155,7 +156,7 @@ export default function ImageViewer({
 							<div className="w-full overflow-y-auto overflow-x-hidden">
 								<img
 									ref={imageRef}
-									src={currentUrl || "/placeholder.svg"}
+									src={currentUrl}
 									alt="Design preview"
 									className="w-full h-auto transition-all duration-300 shadow-lg"
 									style={{

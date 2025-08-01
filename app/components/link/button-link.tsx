@@ -18,7 +18,7 @@ export default function ButtonLink({
 	return (
 		<Link
 			className={cn(
-				"h-9 px-4 py-2 flex items-center gap-2",
+				"px-2 py-2 flex items-center gap-2",
 				"transition-all duration-300 ease-in-out",
 				"hover:scale-105 hover:shadow-lg",
 				"active:scale-95",

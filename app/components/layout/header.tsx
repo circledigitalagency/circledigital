@@ -15,10 +15,32 @@ import AnimatedNavLink from "../animated/nav-link";
 import { Button } from "../ui/button";
 import { ArrowBigUp, ArrowUpRight } from "lucide-react";
 import ButtonLink from "../link/button-link";
+import { motion } from "framer-motion";
 
 export default function Header() {
+	const container = {
+		hidden: { opacity: 0 },
+		show: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.08,
+				delayChildren: 0.3,
+			},
+		},
+	};
+
+	const item = {
+		hidden: { opacity: 0, y: -10 },
+		show: { opacity: 1, y: 0 },
+	};
+
 	return (
-		<header className="flex items-center justify-between container mx-auto px-6 py-6">
+		<motion.header
+			initial={{ opacity: 0, y: -20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, ease: "easeOut" }}
+			className="flex items-center justify-between container mx-auto px-6 py-6"
+		>
 			<Logo />
 			<div className="flex items-center space-x-5">
 				<NavigationMenu>
@@ -66,6 +88,6 @@ export default function Header() {
 					icon={ArrowUpRight}
 				/>
 			</div>
-		</header>
+		</motion.header>
 	);
 }

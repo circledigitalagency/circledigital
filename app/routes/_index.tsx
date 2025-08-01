@@ -28,6 +28,13 @@ export default function Index() {
 		<MainLayout>
 			<section className="container mx-auto px-6 py-16">
 				<div className="grid lg:grid-cols-2 gap-5 items-center">
+					<div>
+						<img
+							src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884652/hero_nr1r5c.png"
+							alt="hero"
+							className="w-full object-contain"
+						/>
+					</div>
 					<div className="space-y-8">
 						<Heading value="Going digital?" />
 						<h2 className="text-4xl lg:text-5xl font-bold leading-tight">
@@ -140,8 +147,12 @@ export default function Index() {
 										key={serviceIndex}
 									>
 										<div className="flex flex-row items-center space-x-2 relative z-10">
-											<h4 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
-												{serv}
+											<serv.icon
+												className="w-4 h-4"
+												style={{ color: val.color }}
+											/>
+											<h4 className="text-base font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
+												{serv.title}
 											</h4>
 										</div>
 

@@ -1,68 +1,10 @@
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
-import { ArrowRight, Star, Users, Zap } from "lucide-react";
+import { ArrowRight, Link, Star, Users, Zap } from "lucide-react";
 import Heading from "../text/sloop-heading";
 import ButtonLink from "../link/button-link";
 import UnderlineLink from "../link/underline-link";
-
-const clientLogos = [
-	{
-		name: "TechCorp",
-		logo: "/placeholder.svg?height=60&width=60",
-		size: "large",
-		position: { top: "10%", left: "15%" },
-		delay: 0,
-	},
-	{
-		name: "StartupXYZ",
-		logo: "/placeholder.svg?height=50&width=50",
-		size: "medium",
-		position: { top: "25%", left: "5%" },
-		delay: 0.5,
-	},
-	{
-		name: "DesignStudio",
-		logo: "/placeholder.svg?height=70&width=70",
-		size: "large",
-		position: { top: "45%", left: "20%" },
-		delay: 1,
-	},
-	{
-		name: "InnovateLab",
-		logo: "/placeholder.svg?height=45&width=45",
-		size: "small",
-		position: { top: "15%", left: "35%" },
-		delay: 1.5,
-	},
-	{
-		name: "GlobalBrand",
-		logo: "/placeholder.svg?height=65&width=65",
-		size: "large",
-		position: { top: "65%", left: "10%" },
-		delay: 2,
-	},
-	{
-		name: "CreativeAgency",
-		logo: "/placeholder.svg?height=55&width=55",
-		size: "medium",
-		position: { top: "75%", left: "30%" },
-		delay: 2.5,
-	},
-	{
-		name: "TechStartup",
-		logo: "/placeholder.svg?height=40&width=40",
-		size: "small",
-		position: { top: "35%", left: "8%" },
-		delay: 3,
-	},
-	{
-		name: "DigitalCorp",
-		logo: "/placeholder.svg?height=60&width=60",
-		size: "medium",
-		position: { top: "55%", left: "35%" },
-		delay: 3.5,
-	},
-];
+import { clientLogos } from "~/lib/data";
 
 const getSizeClasses = (size: string) => {
 	switch (size) {
@@ -103,7 +45,7 @@ export default function BecomeTheCircle() {
 											)} rounded-full overflow-hidden bg-gray-100 flex items-center justify-center`}
 										>
 											<img
-												src={client.logo || "/placeholder.svg"}
+												src={client.logo}
 												alt={`${client.name} logo`}
 												className="w-full h-full object-cover"
 											/>
@@ -145,8 +87,8 @@ export default function BecomeTheCircle() {
 						{/* Benefits */}
 						<div className="space-y-4">
 							<div className="flex items-center gap-3">
-								<div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-									<Star className="w-5 h-5 text-blue-600" />
+								<div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+									<Star className="w-5 h-5 text-primary" />
 								</div>
 								<span className="text-gray-700 font-medium">
 									Premium design, development and marketing solutions tailored
@@ -154,16 +96,16 @@ export default function BecomeTheCircle() {
 								</span>
 							</div>
 							<div className="flex items-center gap-3">
-								<div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-									<Users className="w-5 h-5 text-purple-600" />
+								<div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+									<Users className="w-5 h-5 text-primary" />
 								</div>
 								<span className="text-gray-700 font-medium">
 									Dedicated team of expert designers, developers and creators
 								</span>
 							</div>
 							<div className="flex items-center gap-3">
-								<div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
-									<Zap className="w-5 h-5 text-pink-600" />
+								<div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+									<Zap className="w-5 h-5 text-primary" />
 								</div>
 								<span className="text-gray-700 font-medium">
 									Fast turnaround with unlimited revisions and support
@@ -175,11 +117,10 @@ export default function BecomeTheCircle() {
 						<div className="flex flex-col items-center sm:flex-row gap-4">
 							<ButtonLink
 								to="/contact-us"
-								style="bg-gradient-to-r from-primary to-secondary  text-white   text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+								style="bg-gradient-to-r from-primary to-secondary text-white  text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
 								title="Start Your Project"
 								icon={ArrowRight}
 							/>
-
 							<UnderlineLink to="/portfolio" label="View Our Work" />
 						</div>
 					</div>

@@ -1,10 +1,16 @@
 import { Link } from "@remix-run/react";
 import Logo from "../image/logo";
 import { Separator } from "~/components/ui/separator";
+import { motion } from "framer-motion";
 
 export default function Footer() {
 	return (
-		<footer className="flex flex-col gap-12 py-6 container mx-auto">
+		<motion.footer
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.8, ease: "easeOut" }}
+			className="flex flex-col gap-12 py-6 container mx-auto"
+		>
 			<Separator />
 			<div className="flex sm:flex-row flex-col w-full justify-between sm:items-center">
 				<Link to="/">
@@ -35,6 +41,6 @@ export default function Footer() {
 					Copyright © 2025 Circledigital. All rights reserved.
 				</p>
 			</div>
-		</footer>
+		</motion.footer>
 	);
 }

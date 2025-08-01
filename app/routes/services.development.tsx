@@ -2,7 +2,12 @@ import ImageViewer from "~/components/dynamic/image-viewer";
 import WebsitePlayer from "~/components/dynamic/website-player";
 import MainLayout from "~/components/layout/main";
 import Heading from "~/components/text/sloop-heading";
-import { designPortfolio, services, webPortfolio } from "~/lib/data";
+import {
+	designPortfolio,
+	developmentServices,
+	services,
+	webPortfolio,
+} from "~/lib/data";
 
 export default function Development() {
 	return (
@@ -17,28 +22,13 @@ export default function Development() {
 				</div>
 			</section>
 			<section className="container mx-auto px-6 py-16 space-y-16">
-				<div className="space-y-6">
-					{[
-						{
-							title: "Frontend Development",
-							description:
-								"Responsive, elegant interfaces built for clarity, speed, and modern browsers.",
-						},
-						{
-							title: "Backend & API Integration",
-							description:
-								"We work with trusted backend partners to connect, store, and secure your data.",
-						},
-						{
-							title: "CMS & MVP Builds",
-							description:
-								"Whether you need a quick marketing site or a lean product launch — we build it fast and right.",
-						},
-					].map((item, i) => (
+				<div className="grid grid-cols-3 gap-12">
+					{developmentServices.map((item, i) => (
 						<div
 							key={i}
 							className="p-6 border border-slate-200 bg-white shadow hover:shadow-lg transition"
 						>
+							<item.icon className="w-6 h-6 text-primary mb-4" />
 							<h3 className="text-xl font-semibold mb-2">{item.title}</h3>
 							<p className="text-sm text-gray-600">{item.description}</p>
 						</div>
