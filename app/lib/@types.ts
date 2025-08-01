@@ -7,3 +7,10 @@ export interface IMenu {
 		path: string;
 	}[];
 }
+
+export interface IProject {
+	type: "web" | "design";
+	title: string;
+	url: string;
+	category: string;
+}

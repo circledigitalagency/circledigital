@@ -29,7 +29,7 @@ export default function ButtonLink({
 			{title}
 			{Icon && (
 				<Icon
-					className="transition-transform duration-300 group-hover:rotate-12"
+					className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
 					size={16}
 				/>
 			)}

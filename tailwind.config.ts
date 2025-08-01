@@ -26,6 +26,7 @@ export default {
 			},
 			colors: {
 				primary: "#883E18",
+				secondary: "#DEA738",
 			},
 			backgroundImage: {
 				sparkle:

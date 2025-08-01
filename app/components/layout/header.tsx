@@ -18,7 +18,7 @@ import ButtonLink from "../link/button-link";
 
 export default function Header() {
 	return (
-		<header className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+		<header className="flex items-center justify-between container mx-auto px-6 py-6">
 			<Logo />
 			<div className="flex items-center space-x-5">
 				<NavigationMenu>

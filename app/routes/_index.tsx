@@ -1,12 +1,19 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
+import ImageViewer from "~/components/dynamic/image-viewer";
+import PDFViewer from "~/components/dynamic/pdf-viewer";
+import WebsitePlayer from "~/components/dynamic/website-player";
 import MainLayout from "~/components/layout/main";
 
 import ButtonLink from "~/components/link/button-link";
 import UnderlineLink from "~/components/link/underline-link";
 import Heading from "~/components/text/sloop-heading";
-import { services, whoarewe } from "~/lib/data";
+import { Badge } from "~/components/ui/badge";
+import { designPortfolio, services, webPortfolio, whoarewe } from "~/lib/data";
 import { cn } from "~/lib/utils";
+import BecomeTheCircle from "~/components/dynamic/become-the-cirlce";
+import { useState } from "react";
+import { Button } from "~/components/ui/button";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -16,17 +23,11 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+	const [activeTab, setActiveTab] = useState<"design" | "web">("design");
 	return (
 		<MainLayout>
-			<section className="max-w-7xl mx-auto px-6 py-16">
+			<section className="container mx-auto px-6 py-16">
 				<div className="grid lg:grid-cols-2 gap-5 items-center">
-					<div>
-						<img
-							src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884652/hero_nr1r5c.png"
-							alt="hero"
-							className="w-full object-contain"
-						/>
-					</div>
 					<div className="space-y-8">
 						<Heading value="Going digital?" />
 						<h2 className="text-4xl lg:text-5xl font-bold leading-tight">
@@ -61,7 +62,7 @@ export default function Index() {
 					</div>
 				</div>
 			</section>
-			<section className="max-w-7xl mx-auto px-6 py-16 space-y-16">
+			<section className="container mx-auto px-6 py-16 space-y-16">
 				<div className="grid lg:grid-cols-2 gap-12">
 					<div>
 						<Heading value="Who are we?" />
@@ -70,9 +71,7 @@ export default function Index() {
 						<p className="leading-relaxed">
 							We’re a team of designers, developers, and content creators
 							working together to shape a consistent, compelling digital
-							presence for your business. From beautiful design to seamless
-							development, we focus on delivering high-quality experiences that
-							feel just right.
+							presence for your business.
 						</p>
 						<Link
 							to="/about-us"
@@ -102,7 +101,7 @@ export default function Index() {
 				</div>
 			</section>
 
-			<section className="max-w-7xl mx-auto px-6 py-16 space-y-16">
+			<section className="container mx-auto px-6 py-16 space-y-16">
 				<div className="flex flex-col space-y-4">
 					<Heading value="Our Services" />
 					<p className="leading-relaxed w-[75%]">
@@ -157,13 +156,17 @@ export default function Index() {
 					))}
 				</div>
 			</section>
-			<section className="max-w-7xl mx-auto px-6 py-16 space-y-16">
+			<section className="container mx-auto px-6 py-16 space-y-16">
 				<div className="grid lg:grid-cols-2 gap-12">
 					<div>
 						<Heading value="Some of our work" />
 					</div>
 					<div className="space-y-6">
-						<p className="leading-relaxed">A look at the work we do.</p>
+						<p className="leading-relaxed">
+							A curated collection of projects that showcase our expertise in
+							design and development. Each piece tells a unique story of
+							innovation and creativity.
+						</p>
 						<Link
 							to="/about-us"
 							className="text-primary hover:text-primary underline font-medium"
@@ -172,7 +175,81 @@ export default function Index() {
 						</Link>
 					</div>
 				</div>
+				<div className="flex justify-start">
+					<div className="bg-white/60">
+						<div className="flex gap-2">
+							<Button
+								variant={activeTab === "design" ? "default" : "ghost"}
+								onClick={() => setActiveTab("design")}
+								className={`p-4 transition-all duration-300 ${
+									activeTab === "design"
+										? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
+										: "text-gray-600 hover:text-gray-900"
+								}`}
+							>
+								Design Portfolio
+								<Badge
+									variant="secondary"
+									className="ml-2 bg-white/20 text-current"
+								>
+									{designPortfolio.length}
+								</Badge>
+							</Button>
+							<Button
+								variant={activeTab === "web" ? "default" : "ghost"}
+								onClick={() => setActiveTab("web")}
+								className={`p-4 transition-all duration-300 ${
+									activeTab === "web"
+										? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
+										: "text-gray-600 hover:text-gray-900"
+								}`}
+							>
+								Web Portfolio
+								<Badge
+									variant="secondary"
+									className="ml-2 bg-white/20 text-current"
+								>
+									{webPortfolio.length}
+								</Badge>
+							</Button>
+						</div>
+					</div>
+				</div>
+				{activeTab === "design" && (
+					<div className="flex flex-col space-y-6">
+						<div className="grid grid-cols-2 gap-12">
+							{designPortfolio.map((proj, index) => (
+								<div key={index} className="space-y-2">
+									<ImageViewer
+										initialUrl={proj.url}
+										height={400}
+										className="col-span-1"
+										title={proj.title}
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+				)}
+				{activeTab === "web" && (
+					<div className="flex flex-col space-y-6">
+						<div className="grid grid-cols-2 gap-12">
+							{webPortfolio.map((proj, index) => (
+								<div key={index} className="space-y-2">
+									<WebsitePlayer
+										initialUrl={proj.url}
+										height={400}
+										className="col-span-1"
+										title={proj.title}
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+				)}
 			</section>
+
+			<BecomeTheCircle />
 		</MainLayout>
 	);
 }
