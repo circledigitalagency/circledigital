@@ -7,7 +7,7 @@ import { designPortfolio, designServices, services } from "~/lib/data";
 export default function Design() {
 	return (
 		<MainLayout>
-			<section className="py-20 text-center">
+			<section className="py-20 text-center px-2">
 				<div>
 					<Heading value="Design Services" />
 					<p className="max-w-xl mx-auto mt-4 text-lg text-slate-700">
@@ -17,7 +17,7 @@ export default function Design() {
 				</div>
 			</section>
 			<section className="container mx-auto px-6 py-16 space-y-16">
-				<div className="grid grid-cols-3 gap-12">
+				<div className="grid lg:grid-cols-3 gap-12">
 					{designServices.map((item, i) => (
 						<div
 							key={i}
@@ -33,7 +33,7 @@ export default function Design() {
 			<section className="container mx-auto px-6 py-16">
 				<div className="flex flex-col space-y-6">
 					<Heading value="Recent work" />
-					<div className="grid grid-cols-3 gap-12">
+					<div className="grid lg:grid-cols-3 gap-12">
 						{designPortfolio.map((proj, index) => (
 							<div key={index} className="space-y-2">
 								<ImageViewer
@@ -41,6 +41,7 @@ export default function Design() {
 									height={400}
 									className="col-span-1"
 									title={proj.title}
+									category={proj.category}
 								/>
 							</div>
 						))}

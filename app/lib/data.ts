@@ -86,6 +86,12 @@ export const webPortfolio: IProject[] = [
 		url: "https://www.freedom27.co.za/",
 		category: "",
 	},
+	// {
+	// 	type: "web",
+	// 	title: "Circledigital",
+	// 	url: "http://circledigital.co.za/",
+	// 	category: "",
+	// },
 ];
 
 export const designPortfolio: IProject[] = [

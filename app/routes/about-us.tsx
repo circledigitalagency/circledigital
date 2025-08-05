@@ -41,9 +41,9 @@ export default function AboutUs() {
 	return (
 		<MainLayout>
 			<section className="container mx-auto px-6 py-16">
-				<div className="grid grid-cols-2 gap-10">
+				<div className="grid lg:grid-cols-2 gap-10">
 					<div className="">
-						<div className="grid lg:grid-cols-2">
+						<div className="grid grid-cols-2">
 							<div className="col-span-1 aspect-square ">
 								<img
 									src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1754044573/pexels-chayanan-chaisaart-748435690-25559836_rwgzcb.jpg"
@@ -59,7 +59,7 @@ export default function AboutUs() {
 								/>
 							</div>
 						</div>
-						<div className="grid lg:grid-cols-2">
+						<div className="grid grid-cols-2">
 							<div className="col-span-1 aspect-square ">
 								<img
 									src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1754044578/pexels-steve-29463245_azkovf.jpg"

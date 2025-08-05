@@ -12,7 +12,7 @@ import {
 export default function Development() {
 	return (
 		<MainLayout>
-			<section className="py-20 text-center">
+			<section className="py-20 text-center px-2">
 				<div>
 					<Heading value="Development Services" />
 					<p className="max-w-xl mx-auto mt-4 text-lg text-slate-700">
@@ -22,7 +22,7 @@ export default function Development() {
 				</div>
 			</section>
 			<section className="container mx-auto px-6 py-16 space-y-16">
-				<div className="grid grid-cols-3 gap-12">
+				<div className="grid lg:grid-cols-3 gap-12">
 					{developmentServices.map((item, i) => (
 						<div
 							key={i}
@@ -38,7 +38,7 @@ export default function Development() {
 			<section className="container mx-auto px-6 py-16">
 				<div className="flex flex-col space-y-6">
 					<Heading value="Recent work" />
-					<div className="grid grid-cols-2 gap-12">
+					<div className="grid lg:grid-cols-2 gap-12">
 						{webPortfolio.map((proj, index) => (
 							<div key={index} className="space-y-2">
 								<WebsitePlayer

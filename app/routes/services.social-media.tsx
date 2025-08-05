@@ -14,7 +14,7 @@ import {
 export default function SocialMedia() {
 	return (
 		<MainLayout>
-			<section className="py-20 text-center">
+			<section className="py-20 text-center px-2">
 				<div>
 					<Heading value="Social Media Marketing" />
 					<p className="max-w-xl mx-auto mt-4 text-lg text-slate-700">
@@ -24,7 +24,7 @@ export default function SocialMedia() {
 				</div>
 			</section>
 			<section className="container mx-auto px-6 py-16 space-y-16">
-				<div className="grid grid-cols-3 gap-12">
+				<div className="grid lg:grid-cols-3 gap-12">
 					{socialServices.map((item, i) => (
 						<div
 							key={i}

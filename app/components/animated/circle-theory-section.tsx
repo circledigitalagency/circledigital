@@ -69,7 +69,7 @@ const CircleTheorySection = () => {
 
 	return (
 		<section className="container mx-auto px-6 py-16">
-			<div className="grid grid-cols-2">
+			<div className="grid lg:grid-cols-2 gap-10">
 				{/* Left Content - Animated */}
 				<motion.div
 					className="flex flex-col space-y-4"

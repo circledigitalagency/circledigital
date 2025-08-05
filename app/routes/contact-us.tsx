@@ -4,8 +4,8 @@ import Heading from "~/components/text/sloop-heading";
 export default function ContactUs() {
 	return (
 		<MainLayout>
-			<section className="text-center py-20">
-				<Heading value="Let’s Create Something Powerful" />
+			<section className="text-center py-20 px-2">
+				<Heading value="Join the Circle" />
 				<p className="text-lg text-slate-700 mt-4 max-w-xl mx-auto">
 					Whether you have a big idea, a spark of something new, or just need a
 					fresh perspective, we’re here to help you bring it to life.
