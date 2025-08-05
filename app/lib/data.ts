@@ -83,7 +83,7 @@ export const webPortfolio: IProject[] = [
 	{
 		type: "web",
 		title: "Freedom27",
-		url: "https://freedom27.co.za/",
+		url: "https://www.freedom27.co.za/",
 		category: "",
 	},
 ];
@@ -93,25 +93,25 @@ export const designPortfolio: IProject[] = [
 		type: "design",
 		title: "EasyFindTech",
 		url: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1753964769/EasyFindTech_-_Home1_-_Light_su5xqa.png",
-		category: "",
+		category: "UI/UX Design",
 	},
 	{
 		type: "design",
 		title: "Ubunye",
-		url: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1753964769/EasyFindTech_-_Home1_-_Light_su5xqa.png",
-		category: "",
+		url: "https://ugmnpojyvwbpcnvpmbnk.supabase.co/storage/v1/object/sign/cd-assets/Explore%20Experiences%20(1)%20(2).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kOTczZWQ2Ny1iYTJkLTRiZGEtOTFkMi1mNzZlM2U0N2E5N2QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZC1hc3NldHMvRXhwbG9yZSBFeHBlcmllbmNlcyAoMSkgKDIpLnBuZyIsImlhdCI6MTc1NDM4Njg3NiwiZXhwIjoxODQ4OTk0ODc2fQ.U2fVevTYNH58hlF04y4wX5Za_Y4PYQt7GWgBVQxGMW8",
+		category: "UI/UX Design",
 	},
 	{
 		type: "design",
 		title: "The Creative Agency",
 		url: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1754038815/T-_Home_1_jmycgk.png",
-		category: "",
+		category: "UI/UX Design",
 	},
 	{
 		type: "design",
 		title: "Pula",
-		url: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1753964769/EasyFindTech_-_Home1_-_Light_su5xqa.png",
-		category: "",
+		url: "https://ugmnpojyvwbpcnvpmbnk.supabase.co/storage/v1/object/sign/cd-assets/Frame%2039642%20(1)%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kOTczZWQ2Ny1iYTJkLTRiZGEtOTFkMi1mNzZlM2U0N2E5N2QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZC1hc3NldHMvRnJhbWUgMzk2NDIgKDEpICgxKS5wbmciLCJpYXQiOjE3NTQzODcxMDgsImV4cCI6MTg0ODk5NTEwOH0.t9uKJW0cRbmbX3GKIfuTLfWXzCXvg1kOCwOT5PNf9y4",
+		category: "Pitch Deck",
 	},
 ];
 
@@ -269,59 +269,24 @@ export const developmentServices = [
 export const clientLogos = [
 	{
 		name: "EasyFindTech",
-		logo: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1754053429/397_Easyfind_collateral_logo_pFinal_20190529-01_3_rzxl6x.jpg",
+		logo: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1754381625/397_Easyfind_collateral_logo_pFinal_20190529-01_1_slgej8.png",
 		size: "large",
-		position: { top: "10%", left: "15%" },
+		className: "top-[5%] left-[20%] md:top-[10%] md:left-[15%]",
 		delay: 0,
 	},
 	{
 		name: "Freedom27",
 		logo: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1751621471/freedom-logo_g1idsk.png",
-		size: "medium",
-		position: { top: "25%", left: "5%" },
+		size: "large",
+		className: "top-[35%] left-[10%] md:top-[15%] md:left-[45%]",
 		delay: 0.5,
 	},
 	{
-		name: "DesignStudio",
-		logo: "/placeholder.svg?height=70&width=70",
+		name: "CornerstoneResources",
+		logo: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1754380923/logo_sr6lgi.svg",
 		size: "large",
-		position: { top: "45%", left: "20%" },
+		className: "top-[65%] left-[50%] md:top-[55%] md:left-[30%]",
 		delay: 1,
-	},
-	{
-		name: "InnovateLab",
-		logo: "/placeholder.svg?height=45&width=45",
-		size: "small",
-		position: { top: "15%", left: "35%" },
-		delay: 1.5,
-	},
-	{
-		name: "GlobalBrand",
-		logo: "/placeholder.svg?height=65&width=65",
-		size: "large",
-		position: { top: "65%", left: "10%" },
-		delay: 2,
-	},
-	{
-		name: "CreativeAgency",
-		logo: "/placeholder.svg?height=55&width=55",
-		size: "medium",
-		position: { top: "75%", left: "30%" },
-		delay: 2.5,
-	},
-	{
-		name: "TechStartup",
-		logo: "/placeholder.svg?height=40&width=40",
-		size: "small",
-		position: { top: "35%", left: "8%" },
-		delay: 3,
-	},
-	{
-		name: "DigitalCorp",
-		logo: "/placeholder.svg?height=60&width=60",
-		size: "medium",
-		position: { top: "55%", left: "35%" },
-		delay: 3.5,
 	},
 ];
 

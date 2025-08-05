@@ -1,22 +1,43 @@
+import { MetaFunction } from "@remix-run/react";
 import { ChevronDown } from "lucide-react";
 import React from "react";
+import CircleTheorySection from "~/components/animated/circle-theory-section";
 import BecomeTheCircle from "~/components/dynamic/become-the-cirlce";
 import MainLayout from "~/components/layout/main";
 import UnderlineLink from "~/components/link/underline-link";
 import Heading from "~/components/text/sloop-heading";
-import { values } from "~/lib/data";
-import { cn } from "~/lib/utils";
+
+export const meta: MetaFunction = () => {
+	return [
+		{
+			title:
+				"About CircleDigital | Creative Tech Studio Shaping Digital Brands",
+		},
+		{
+			name: "description",
+			content:
+				"Discover the vision, mission, and approach of CircleDigital—a creative technology studio blending design, development, and storytelling to shape brands in a digital world.",
+		},
+		{
+			property: "og:title",
+			content: "About CircleDigital | Creative Tech Studio",
+		},
+		{
+			property: "og:description",
+			content:
+				"CircleDigital combines design thinking, content creation, and technical precision to build intuitive, human-centered digital experiences. Learn about our mission and values.",
+		},
+		{
+			property: "og:image",
+			content:
+				"https://res.cloudinary.com/dg1g6ctku/image/upload/v1754044573/pexels-chayanan-chaisaart-748435690-25559836_rwgzcb.jpg",
+		},
+		{ property: "og:type", content: "website" },
+		{ property: "og:url", content: "https://www.circledigital.co.za/about" },
+	];
+};
 
 export default function AboutUs() {
-	const steps = [
-		{ label: "Spark", description: "The initial idea or intention" },
-		{ label: "Shape", description: "We define direction & creative tone" },
-		{ label: "Design", description: "Visuals, copy, and systems come to life" },
-		{ label: "Build", description: "We develop your product or platform" },
-		{ label: "Amplify", description: "Social content, visibility, and voice" },
-		{ label: "Reflect", description: "We evolve, refine, and loop back" },
-	];
-
 	return (
 		<MainLayout>
 			<section className="container mx-auto px-6 py-16">
@@ -113,71 +134,7 @@ export default function AboutUs() {
 					</p>
 				</div>
 			</section>
-			<section className="container mx-auto px-6 py-16">
-				<div className="grid grid-cols-2">
-					<div className="flex flex-col space-y-4">
-						<Heading value="The Circle Theory" />
-						<p className="leading-relaxed w-[80%]">
-							Our approach is grounded in the belief that creative work is not
-							linear, it’s cyclical, collaborative, and constantly evolving.
-						</p>
-
-						<UnderlineLink to="/contact-us" label="Work with us" />
-					</div>
-					<div className="space-y-6">
-						{values.map((val, index) => (
-							<div className="space-y-6" key={index}>
-								<div className="flex flex-row space-x-6">
-									<div className="w-8 h-8 rounded-full flex items-center justify-center">
-										<p className="text-sm font-medium ">{index + 1}</p>
-									</div>
-
-									<div className="flex flex-col space-y-2">
-										<p className="text-lg font-semibold">{val.title}</p>
-										<p className="font-light text-slate-700">
-											{val.description}
-										</p>
-									</div>
-								</div>
-								<div className="w-full h-[1px] bg-gradient-to-r from-primary  to-secondary" />
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-			{/* <div className="relative w-[400px] h-[400px] mx-auto my-20">
-			
-				<div className="absolute inset-0 flex items-center justify-center">
-					<div className="w-32 h-32 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white flex items-center justify-center text-center text-sm font-semibold shadow-xl">
-						CircleDigital
-						<br />
-						The Core
-					</div>
-				</div>
-
-			
-				{steps.map((step, i) => {
-					const angle = (i / steps.length) * 2 * Math.PI;
-					const radius = 160;
-
-					const x = radius * Math.cos(angle);
-					const y = radius * Math.sin(angle);
-
-					return (
-						<div
-							key={i}
-							className="absolute w-20 h-20 rounded-full bg-white text-xs font-medium shadow-md flex items-center justify-center hover:scale-110 hover:bg-indigo-100 transition-all duration-300"
-							style={{
-								top: `calc(50% + ${y}px - 40px)`,
-								left: `calc(50% + ${x}px - 40px)`,
-							}}
-						>
-							{step.label}
-						</div>
-					);
-				})}
-			</div> */}
-
+			<CircleTheorySection />
 			<BecomeTheCircle />
 		</MainLayout>
 	);

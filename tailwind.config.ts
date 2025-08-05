@@ -32,6 +32,15 @@ export default {
 				sparkle:
 					"url('https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884645/developers_meb2ij.png')",
 			},
+			keyframes: {
+				float: {
+					"0%, 100%": { transform: "translateY(0)" },
+					"50%": { transform: "translateY(-4px)" },
+				},
+			},
+			animation: {
+				float: "float 4s ease-in-out infinite",
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

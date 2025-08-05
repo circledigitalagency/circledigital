@@ -1,30 +1,17 @@
 "use client";
 
 import type React from "react";
-
 import { useState, useRef } from "react";
-import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
 import { Card, CardContent, CardHeader } from "~/components/ui/card";
-import { Badge } from "~/components/ui/badge";
-import {
-	RefreshCw,
-	Maximize2,
-	Minimize2,
-	AlertCircle,
-	ImageIcon,
-	Download,
-	ZoomIn,
-	ZoomOut,
-	RotateCw,
-	FileText,
-} from "lucide-react";
+import { RefreshCw, FileText } from "lucide-react";
+import { Badge } from "../ui/badge";
 
 interface ImageViewerProps {
 	initialUrl?: string;
 	height?: number;
 	className?: string;
 	title?: string;
+	category?: string;
 }
 
 export default function ImageViewer({
@@ -32,6 +19,7 @@ export default function ImageViewer({
 	height = 600,
 	className = "",
 	title = "Design Portfolio",
+	category,
 }: ImageViewerProps) {
 	const [url, setUrl] = useState(initialUrl);
 	const [currentUrl, setCurrentUrl] = useState(initialUrl);
@@ -41,36 +29,6 @@ export default function ImageViewer({
 	const [zoom, setZoom] = useState(100);
 	const [rotation, setRotation] = useState(0);
 	const imageRef = useRef<HTMLImageElement>(null);
-
-	const handleUrlSubmit = (e: React.FormEvent) => {
-		e.preventDefault();
-		if (!url.trim()) return;
-
-		setCurrentUrl(url.trim());
-		setIsLoading(true);
-		setHasError(false);
-	};
-
-	const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const file = e.target.files?.[0];
-		if (file && file.type.startsWith("image/")) {
-			const fileUrl = URL.createObjectURL(file);
-			setCurrentUrl(fileUrl);
-			setUrl(file.name);
-			setIsLoading(true);
-			setHasError(false);
-		}
-	};
-
-	const handleRefresh = () => {
-		if (currentUrl) {
-			setIsLoading(true);
-			setHasError(false);
-			if (imageRef.current) {
-				imageRef.current.src = currentUrl + "?t=" + Date.now();
-			}
-		}
-	};
 
 	const handleImageLoad = () => {
 		setIsLoading(false);
@@ -82,44 +40,6 @@ export default function ImageViewer({
 		setHasError(true);
 	};
 
-	const toggleFullscreen = () => {
-		setIsFullscreen(!isFullscreen);
-	};
-
-	const downloadImage = () => {
-		if (currentUrl) {
-			const link = document.createElement("a");
-			link.href = currentUrl;
-			link.download = url || "design-image";
-			link.click();
-		}
-	};
-
-	const zoomIn = () => {
-		setZoom((prev) => Math.min(prev + 25, 300));
-	};
-
-	const zoomOut = () => {
-		setZoom((prev) => Math.max(prev - 25, 25));
-	};
-
-	const resetZoom = () => {
-		setZoom(100);
-		setRotation(0);
-	};
-
-	const rotateImage = () => {
-		setRotation((prev) => (prev + 90) % 360);
-	};
-
-	const getFileName = (url: string) => {
-		try {
-			return url.split("/").pop()?.split("?")[0] || "Image";
-		} catch {
-			return "Image";
-		}
-	};
-
 	return (
 		<div className={`w-full ${className}`}>
 			<Card
@@ -128,11 +48,14 @@ export default function ImageViewer({
 				} transition-all duration-300`}
 			>
 				<CardHeader className="pb-3">
-					<div className="flex flex-col gap-3">
+					<div className="flex flex-row justify-between items-center">
 						<div className="flex items-center gap-2">
 							<FileText className="w-5 h-5 text-muted-foreground" />
 							<h3 className="text-lg font-semibold">{title}</h3>
 						</div>
+						<Badge className="text-black bg-slate-200 hover:bg-slate-100">
+							{category}
+						</Badge>
 					</div>
 				</CardHeader>
 

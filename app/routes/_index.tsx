@@ -17,8 +17,29 @@ import { Button } from "~/components/ui/button";
 
 export const meta: MetaFunction = () => {
 	return [
-		{ title: "Circledigital - Your Digital Guides" },
-		{ name: "description", content: "Welcome to Remix!" },
+		{ title: "Digital Agency | Design, Development & Social Media Experts" },
+		{
+			name: "description",
+			content:
+				"We’re your creative technology partner, blending design thinking and playful minimalism to craft digital experiences that inspire and perform. Explore our work and services.",
+		},
+
+		{
+			property: "og:title",
+			content: "Digital Agency | Design, Development & Social Media Experts",
+		},
+		{
+			property: "og:description",
+			content:
+				"We create digital experiences that inspire. Our team of designers, developers, and content creators helps shape brands through technology, storytelling, and design.",
+		},
+		{
+			property: "og:image",
+			content:
+				"https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884652/hero_nr1r5c.png",
+		},
+		{ property: "og:type", content: "website" },
+		{ property: "og:url", content: "https://www.circledigital.co.za" },
 	];
 };
 
@@ -26,7 +47,7 @@ export default function Index() {
 	const [activeTab, setActiveTab] = useState<"design" | "web">("design");
 	return (
 		<MainLayout>
-			<section className="container mx-auto px-6 py-16">
+			<section className="container mx-auto px-6 py-10 lg:py-16">
 				<div className="grid lg:grid-cols-2 gap-5 items-center">
 					<div>
 						<img
@@ -47,19 +68,28 @@ export default function Index() {
 						</p>
 
 						<div className="grid grid-cols-3 gap-5">
-							<Link to="/services/design">
+							<Link
+								to="/services/design"
+								className="transition-transform duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 animate-float"
+							>
 								<img
 									src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884632/design-hero_z2iemk.png"
 									alt="design"
 								/>
 							</Link>
-							<Link to="/services/development">
+							<Link
+								to="/services/development"
+								className="transition-transform duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 animate-float"
+							>
 								<img
 									src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884634/development-hero_jzasu5.png"
 									alt="development"
 								/>
 							</Link>
-							<Link to="/services/social-media">
+							<Link
+								to="/services/social-media"
+								className="transition-transform duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 animate-float"
+							>
 								<img
 									src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884632/social-media-hero_bqd3ld.png"
 									alt="social-media"
@@ -111,7 +141,7 @@ export default function Index() {
 			<section className="container mx-auto px-6 py-16 space-y-16">
 				<div className="flex flex-col space-y-4">
 					<Heading value="Our Services" />
-					<p className="leading-relaxed w-[75%]">
+					<p className="leading-relaxed lg:w-[75%]">
 						We digital services that blend design, technology, and storytelling.
 						Whether you’re starting from scratch or levelling up your digital
 						presence, we help shape ideas into experiences, from websites and
@@ -120,7 +150,7 @@ export default function Index() {
 
 					<UnderlineLink to="/contact-us" label="Start a project" />
 				</div>
-				<div className="grid lg: grid-cols-3 gap-32">
+				<div className="grid lg:grid-cols-3 gap-32">
 					{services.map((val, index) => (
 						<div className="space-y-8" key={index}>
 							<div className="relative">
@@ -228,7 +258,7 @@ export default function Index() {
 				</div>
 				{activeTab === "design" && (
 					<div className="flex flex-col space-y-6">
-						<div className="grid grid-cols-2 gap-12">
+						<div className="grid lg:grid-cols-3 gap-12">
 							{designPortfolio.map((proj, index) => (
 								<div key={index} className="space-y-2">
 									<ImageViewer
@@ -236,6 +266,7 @@ export default function Index() {
 										height={400}
 										className="col-span-1"
 										title={proj.title}
+										category={proj.category}
 									/>
 								</div>
 							))}
@@ -244,7 +275,7 @@ export default function Index() {
 				)}
 				{activeTab === "web" && (
 					<div className="flex flex-col space-y-6">
-						<div className="grid grid-cols-2 gap-12">
+						<div className="grid lg:grid-cols-3 gap-12">
 							{webPortfolio.map((proj, index) => (
 								<div key={index} className="space-y-2">
 									<WebsitePlayer

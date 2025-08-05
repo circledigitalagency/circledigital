@@ -13,7 +13,7 @@ const getSizeClasses = (size: string) => {
 		case "medium":
 			return "w-16 h-16";
 		case "large":
-			return "w-20 h-20";
+			return "lg:w-44 lg:h-44 w-32 h-32";
 		default:
 			return "w-16 h-16";
 	}
@@ -24,21 +24,18 @@ export default function BecomeTheCircle() {
 		<section className="py-20  relative overflow-hidden">
 			<div className="container mx-auto px-6">
 				<div className="grid lg:grid-cols-2 gap-12 items-center">
-					{/* Left Side - Floating Client Logos */}
 					<div className="relative h-96 lg:h-[500px]">
 						<div className="absolute inset-0">
 							{clientLogos.map((client, index) => (
 								<div
 									key={client.name}
-									className="absolute animate-float"
+									className={`absolute animate-float ${client.className}`}
 									style={{
-										top: client.position.top,
-										left: client.position.left,
 										animationDelay: `${client.delay}s`,
 										animationDuration: `${3 + (index % 3)}s`,
 									}}
 								>
-									<Card className="p-3 bg-white/80 backdrop-blur-sm border-2 border-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 rounded-full">
+									<Card className="p-3 bg-white backdrop-blur-sm border-2 border-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 rounded-full">
 										<div
 											className={`${getSizeClasses(
 												client.size
@@ -47,7 +44,7 @@ export default function BecomeTheCircle() {
 											<img
 												src={client.logo}
 												alt={`${client.name} logo`}
-												className="w-full h-full object-cover"
+												className="w-full h-full object-contain p-2"
 											/>
 										</div>
 									</Card>
@@ -114,7 +111,7 @@ export default function BecomeTheCircle() {
 						</div>
 
 						{/* CTA Buttons */}
-						<div className="flex flex-col items-center sm:flex-row gap-4">
+						<div className="flex items-center sm:flex-row gap-4">
 							<ButtonLink
 								to="/contact-us"
 								style="bg-gradient-to-r from-primary to-secondary text-white  text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"

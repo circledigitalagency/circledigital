@@ -16,6 +16,7 @@ import { Button } from "../ui/button";
 import { ArrowBigUp, ArrowUpRight } from "lucide-react";
 import ButtonLink from "../link/button-link";
 import { motion } from "framer-motion";
+import BurgerMenu from "./burger";
 
 export default function Header() {
 	const container = {
@@ -42,7 +43,7 @@ export default function Header() {
 			className="flex items-center justify-between container mx-auto px-6 py-6"
 		>
 			<Logo />
-			<div className="flex items-center space-x-5">
+			<div className="sm:flex items-center space-x-5 hidden">
 				<NavigationMenu>
 					<NavigationMenuList>
 						{menu.map((item, index) => (
@@ -88,6 +89,7 @@ export default function Header() {
 					icon={ArrowUpRight}
 				/>
 			</div>
+			<BurgerMenu />
 		</motion.header>
 	);
 }
