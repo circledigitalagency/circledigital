@@ -76,6 +76,12 @@ export const whoarewe = [
 export const webPortfolio: IProject[] = [
 	{
 		type: "web",
+		title: "Easyfind Tech",
+		url: "https://easyfindtech.co.za/",
+		category: "",
+	},
+	{
+		type: "web",
 		title: "CSResources",
 		url: "https://csresources.co.za/",
 		category: "",

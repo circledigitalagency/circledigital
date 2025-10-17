@@ -44,7 +44,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-	const [activeTab, setActiveTab] = useState<"design" | "web">("design");
+	const [activeTab, setActiveTab] = useState<"design" | "web">("web");
 	return (
 		<MainLayout>
 			<section className="container mx-auto px-6 py-10 lg:py-16">
@@ -220,23 +220,6 @@ export default function Index() {
 					<div className="bg-white/60">
 						<div className="flex gap-2">
 							<Button
-								variant={activeTab === "design" ? "default" : "ghost"}
-								onClick={() => setActiveTab("design")}
-								className={`p-4 transition-all duration-300 ${
-									activeTab === "design"
-										? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
-										: "text-gray-600 hover:text-gray-900"
-								}`}
-							>
-								Design Portfolio
-								<Badge
-									variant="secondary"
-									className="ml-2 bg-white/20 text-current"
-								>
-									{designPortfolio.length}
-								</Badge>
-							</Button>
-							<Button
 								variant={activeTab === "web" ? "default" : "ghost"}
 								onClick={() => setActiveTab("web")}
 								className={`p-4 transition-all duration-300 ${
@@ -251,6 +234,23 @@ export default function Index() {
 									className="ml-2 bg-white/20 text-current"
 								>
 									{webPortfolio.length}
+								</Badge>
+							</Button>
+							<Button
+								variant={activeTab === "design" ? "default" : "ghost"}
+								onClick={() => setActiveTab("design")}
+								className={`p-4 transition-all duration-300 ${
+									activeTab === "design"
+										? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
+										: "text-gray-600 hover:text-gray-900"
+								}`}
+							>
+								Design Portfolio
+								<Badge
+									variant="secondary"
+									className="ml-2 bg-white/20 text-current"
+								>
+									{designPortfolio.length}
 								</Badge>
 							</Button>
 						</div>

@@ -4,6 +4,7 @@ import { Separator } from "~/components/ui/separator";
 import { motion } from "framer-motion";
 import { menu } from "~/lib/data";
 import AnimatedNavLink from "../animated/nav-link";
+import { Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
 	return (
@@ -14,10 +15,37 @@ export default function Footer() {
 			className="flex flex-col gap-12 py-6 px-6 container mx-auto"
 		>
 			<Separator />
-			<div className="flex sm:flex-row flex-col w-full justify-between sm:items-center gap-12">
-				<Link to="/">
-					<Logo />
-				</Link>
+			<div className="flex sm:flex-row flex-col w-full justify-between sm:items-start gap-12">
+				<div>
+					<Link to="/">
+						<Logo />
+					</Link>
+					<div className="flex gap-4 items-center mt-4 mb-4">
+						<a
+							className="text-primary"
+							href="https://www.instagram.com/circledigital.za?igsh=aDkzM20xdzJjOTdk&utm_source=qr"
+						>
+							<Instagram />
+						</a>
+						<a
+							className="text-primary"
+							href="https://www.linkedin.com/company/circle-digital-za"
+						>
+							<Linkedin />
+						</a>
+					</div>
+					<div className="flex flex-col space-y-2">
+						<p className="font-light text-sm">
+							137 9th Rd, Noordwyk, Midrand, 1687
+						</p>
+						<a
+							href="mailto:connect@circledigital.co.za"
+							className="font-medium text-sm text-primary cursor-pointer"
+						>
+							connect@circledigital.co.za
+						</a>
+					</div>
+				</div>
 				<div className="grid lg:grid-cols-3 gap-2 lg:gap-12">
 					{menu.map((men, index) => (
 						<div key={index}>
@@ -50,17 +78,6 @@ export default function Footer() {
 				</div>
 			</div>
 
-			<div className="flex flex-col space-y-2">
-				<p className="font-light text-sm">
-					137 9th Rd, Noordwyk, Midrand, 1687
-				</p>
-				<a
-					href="mailto:connect@circledigital.co.za"
-					className="font-medium text-sm text-primary cursor-pointer"
-				>
-					connect@circledigital.co.za
-				</a>
-			</div>
 			<Separator />
 			<div className="flex w-full justify-center">
 				<p className="font-light text-sm">
