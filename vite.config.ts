@@ -10,7 +10,7 @@ declare module "@remix-run/node" {
 }
 
 export default defineConfig({
-	base: "/",
+	// base: "/",
 	plugins: [
 		remix({
 			ssr: false,
