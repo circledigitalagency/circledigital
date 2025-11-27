@@ -113,23 +113,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 									url: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1753964769/EasyFindTech_-_Home1_-_Light_su5xqa.png",
 									about: "UI/UX Design",
 								},
-								{
-									"@type": "CreativeWork",
-									name: "Ubunye",
-									url: "https://ugmnpojyvwbpcnvpmbnk.supabase.co/storage/v1/object/sign/cd-assets/Explore%20Experiences%20(1)%20(2).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kOTczZWQ2Ny1iYTJkLTRiZGEtOTFkMi1mNzZlM2U0N2E5N2QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZC1hc3NldHMvRXhwbG9yZSBFeHBlcmllbmNlcyAoMSkgKDIpLnBuZyIsImlhdCI6MTc1NDM4Njg3NiwiZXhwIjoxODQ4OTk0ODc2fQ.U2fVevTYNH58hlF04y4wX5Za_Y4PYQt7GWgBVQxGMW8",
-									about: "UI/UX Design",
-								},
+
 								{
 									"@type": "CreativeWork",
 									name: "The Creative Agency",
 									url: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1754038815/T-_Home_1_jmycgk.png",
 									about: "UI/UX Design",
-								},
-								{
-									"@type": "CreativeWork",
-									name: "Pula",
-									url: "https://ugmnpojyvwbpcnvpmbnk.supabase.co/storage/v1/object/sign/cd-assets/Frame%2039642%20(1)%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kOTczZWQ2Ny1iYTJkLTRiZGEtOTFkMi1mNzZlM2U0N2E5N2QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZC1hc3NldHMvRnJhbWUgMzk2NDIgKDEpICgxKS5wbmciLCJpYXQiOjE3NTQzODcxMDgsImV4cCI6MTg0ODk5NTEwOH0.t9uKJW0cRbmbX3GKIfuTLfWXzCXvg1kOCwOT5PNf9y4",
-									about: "Pitch Deck",
 								},
 							],
 						}),
