@@ -13,7 +13,7 @@ export default defineConfig({
 	// base: "/",
 	plugins: [
 		remix({
-			ssr: false,
+			//ssr: false, for static html
 			future: {
 				v3_fetcherPersist: true,
 				v3_relativeSplatPath: true,
