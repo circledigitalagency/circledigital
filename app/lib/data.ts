@@ -76,6 +76,12 @@ export const whoarewe = [
 export const webPortfolio: IProject[] = [
 	{
 		type: "web",
+		title: "MN Studios",
+		url: "https://dev-mnstudios.netlify.app/",
+		category: "",
+	},
+	{
+		type: "web",
 		title: "Easyfind Tech",
 		url: "https://easyfindtech.co.za/",
 		category: "",
@@ -280,9 +286,16 @@ export const developmentServices = [
 
 export const clientLogos = [
 	{
+		name: "MN Studios",
+		logo: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1763137979/Untitled_design_4_ii0j5b.png",
+		size: "large",
+		className: "top-[10%] left-[10%] md:top-[50%] md:left-[60%]",
+		delay: 0,
+	},
+	{
 		name: "EasyFindTech",
 		logo: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1754381625/397_Easyfind_collateral_logo_pFinal_20190529-01_1_slgej8.png",
-		size: "large",
+		size: "xlarge",
 		className: "top-[5%] left-[20%] md:top-[10%] md:left-[15%]",
 		delay: 0,
 	},
@@ -296,7 +309,7 @@ export const clientLogos = [
 	{
 		name: "CornerstoneResources",
 		logo: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1754380923/logo_sr6lgi.svg",
-		size: "large",
+		size: "xlarge",
 		className: "top-[65%] left-[50%] md:top-[55%] md:left-[30%]",
 		delay: 1,
 	},

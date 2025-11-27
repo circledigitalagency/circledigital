@@ -13,6 +13,8 @@ const getSizeClasses = (size: string) => {
 		case "medium":
 			return "w-16 h-16";
 		case "large":
+			return "lg:w-28 lg:h-28 w-20 h-20";
+		case "xlarge":
 			return "lg:w-44 lg:h-44 w-32 h-32";
 		default:
 			return "w-16 h-16";
@@ -25,7 +27,7 @@ export default function BecomeTheCircle() {
 			<div className="container mx-auto px-6">
 				<div className="grid lg:grid-cols-2 gap-12 items-center">
 					<div className="relative h-96 lg:h-[500px]">
-						<div className="absolute inset-0">
+						<div className="absolute inset-0 z-10">
 							{clientLogos.map((client, index) => (
 								<div
 									key={client.name}
@@ -51,19 +53,18 @@ export default function BecomeTheCircle() {
 								</div>
 							))}
 						</div>
-
 						{/* Background circles for visual effect */}
 						<div className="absolute inset-0 opacity-20">
-							<div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/20 rounded-full animate-pulse"></div>
+							<div className="absolute top-1/4 left-2/4 w-32 h-32 bg-primary/20 rounded-full animate-pulse"></div>
 							<div
-								className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-secondary rounded-full animate-pulse"
+								className="absolute bottom-1/3 right-2/4 w-24 h-24 bg-secondary rounded-full animate-pulse"
 								style={{ animationDelay: "1s" }}
 							></div>
 							<div
 								className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-200 rounded-full animate-pulse"
 								style={{ animationDelay: "2s" }}
 							></div>
-						</div>
+						</div>{" "}
 					</div>
 
 					{/* Right Side - Call to Action */}

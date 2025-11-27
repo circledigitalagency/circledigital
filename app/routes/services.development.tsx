@@ -22,7 +22,7 @@ export default function Development() {
 				</div>
 			</section>
 			<section className="container mx-auto px-6 py-16 space-y-16">
-				<div className="grid lg:grid-cols-3 gap-12">
+				<div className="grid md:grid-cols-3 gap-12">
 					{developmentServices.map((item, i) => (
 						<div
 							key={i}
