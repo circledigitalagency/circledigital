@@ -95,7 +95,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 							"@context": "https://schema.org",
 							"@type": "ItemList",
 							name: "Portfolio Projects",
-							url: "https://www.circledigital.co.za/portfolio",
+							url: "https://www.circledigital.co.za/work",
 							itemListElement: [
 								{
 									"@type": "WebSite",

@@ -21,34 +21,6 @@ import {
 	LifeBuoy,
 } from "lucide-react";
 
-export const menu: IMenu[] = [
-	{
-		label: "About us",
-		path: "/about-us",
-	},
-	{
-		label: "Our Services",
-		menuItems: [
-			{
-				label: "Design",
-				path: "/services/design",
-			},
-			{
-				label: "Social Media",
-				path: "/services/social-media",
-			},
-			{
-				label: "Development",
-				path: "/services/development",
-			},
-		],
-	},
-	{
-		label: "Portfolio",
-		path: "/portfolio",
-	},
-];
-
 export const whoarewe = [
 	{
 		image:
@@ -183,7 +155,7 @@ export const socialServices = [
 	{
 		title: "Platform Management",
 		description:
-			"End-to-end support on IG, LinkedIn, TikTok & more — posting, engagement & analytics.",
+			"End-to-end support on IG, LinkedIn, TikTok & more posting, engagement & analytics.",
 		icon: Smartphone,
 	},
 	{
@@ -317,18 +289,51 @@ export const clientLogos = [
 
 export const services = [
 	{
-		label: "Design",
-		services: designServices,
-		color: "#5B3B6D",
+		id: "01",
+		label: "Branding",
+		icon: "✦",
+		title: "Brand identity & direction",
+		description:
+			"Clear positioning and visuals that feel intentional, and instantly elevate perception.",
+		features: [
+			"Identity systems & guidelines",
+			"Logo refinement & rollout",
+			"Creative direction for campaigns",
+		],
+		link: "/branding",
+		linkText: "Explore branding",
+		category: "branding",
 	},
 	{
+		id: "02",
 		label: "Development",
-		services: developmentServices,
-		color: "#3D6B66",
+		icon: "⬚",
+		title: "Websites & product builds",
+		description:
+			"Fast, modern builds with clean UX, built for conversion, performance, and clarity.",
+		features: [
+			"Marketing websites & landing pages",
+			"Web apps & internal tools",
+			"Integrations, automation & hosting",
+		],
+		link: "/development",
+		linkText: "Explore development",
+		category: "web",
 	},
 	{
-		label: "Social Media",
-		services: socialServices,
-		color: "#D4AF37",
+		id: "03",
+		label: "Social",
+		icon: "◐",
+		title: "Content systems & growth",
+		description:
+			"Consistent visuals and messaging that build trust, plus campaigns that convert.",
+		features: [
+			"Social design & templates",
+			"Content planning & rollout",
+			"Paid ads & performance tuning",
+		],
+		link: "/social-media",
+		linkText: "Explore social",
+		category: "social",
 	},
 ];

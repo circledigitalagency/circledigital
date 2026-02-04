@@ -43,7 +43,7 @@ const AnimatedNavLink = ({
 					ease: "easeOut",
 				}}
 				className={cn(
-					"sm:text-sm text-xs cursor-pointer hover:text-lightBlue",
+					"sm:text-sm text-xs cursor-pointer text-white",
 					isHovering && activeOption == option.label && "underline"
 				)}
 				key={index}

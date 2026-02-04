@@ -23,7 +23,7 @@ export default function PortfolioTab({
 								: "text-gray-600 hover:text-gray-900"
 						}`}
 					>
-						Design Portfolio
+						Branding
 						<Badge
 							variant="secondary"
 							className="ml-2 bg-white/20 text-current"
@@ -40,7 +40,7 @@ export default function PortfolioTab({
 								: "text-gray-600 hover:text-gray-900"
 						}`}
 					>
-						Web Portfolio
+						Websites & Apps
 						<Badge
 							variant="secondary"
 							className="ml-2 bg-white/20 text-current"

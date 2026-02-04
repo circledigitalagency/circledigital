@@ -1,10 +1,11 @@
-import { Button } from "~/components/ui/button";
-import { Card } from "~/components/ui/card";
-import { ArrowRight, Link, Star, Users, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, Star, Users, Zap } from "lucide-react";
 import Heading from "../text/sloop-heading";
 import ButtonLink from "../link/button-link";
 import UnderlineLink from "../link/underline-link";
 import { clientLogos } from "~/lib/data";
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const getSizeClasses = (size: string) => {
 	switch (size) {
@@ -13,134 +14,201 @@ const getSizeClasses = (size: string) => {
 		case "medium":
 			return "w-16 h-16";
 		case "large":
-			return "lg:w-28 lg:h-28 w-20 h-20";
+			return "w-20 h-20 lg:w-28 lg:h-28";
 		case "xlarge":
-			return "lg:w-44 lg:h-44 w-32 h-32";
+			return "w-32 h-32 lg:w-44 lg:h-44";
 		default:
 			return "w-16 h-16";
 	}
 };
 
-export default function BecomeTheCircle() {
+function OrbLines({ accent = "rgba(120,180,255,0.45)" }: { accent?: string }) {
 	return (
-		<section className="py-20  relative overflow-hidden">
-			<div className="container mx-auto px-6">
-				<div className="grid lg:grid-cols-2 gap-12 items-center">
-					<div className="relative h-96 lg:h-[500px]">
-						<div className="absolute inset-0 z-10">
-							{clientLogos.map((client, index) => (
-								<div
-									key={client.name}
-									className={`absolute animate-float ${client.className}`}
-									style={{
-										animationDelay: `${client.delay}s`,
-										animationDuration: `${3 + (index % 3)}s`,
-									}}
-								>
-									<Card className="p-3 bg-white backdrop-blur-sm border-2 border-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 rounded-full">
-										<div
-											className={`${getSizeClasses(
-												client.size
-											)} rounded-full overflow-hidden bg-gray-100 flex items-center justify-center`}
-										>
-											<img
-												src={client.logo}
-												alt={`${client.name} logo`}
-												className="w-full h-full object-contain p-2"
-											/>
-										</div>
-									</Card>
-								</div>
-							))}
-						</div>
-						{/* Background circles for visual effect */}
-						<div className="absolute inset-0 opacity-20">
-							<div className="absolute top-1/4 left-2/4 w-32 h-32 bg-primary/20 rounded-full animate-pulse"></div>
-							<div
-								className="absolute bottom-1/3 right-2/4 w-24 h-24 bg-secondary rounded-full animate-pulse"
-								style={{ animationDelay: "1s" }}
-							></div>
-							<div
-								className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-200 rounded-full animate-pulse"
-								style={{ animationDelay: "2s" }}
-							></div>
-						</div>{" "}
+		<div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
+			<div
+				className="absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-25 blur-3xl"
+				style={{
+					background: `radial-gradient(circle at 30% 30%, ${accent}, transparent 60%)`,
+				}}
+			/>
+			<div
+				className="absolute -right-20 -top-20 h-96 w-96 rounded-full opacity-25"
+				style={{
+					background: `conic-gradient(from 180deg, transparent, ${accent}, transparent)`,
+					maskImage:
+						"radial-gradient(circle, transparent 63%, black 64%, black 64.8%, transparent 66%)",
+					WebkitMaskImage:
+						"radial-gradient(circle, transparent 63%, black 64%, black 64.8%, transparent 66%)",
+				}}
+			/>
+			<div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-background" />
+		</div>
+	);
+}
+
+function LogoOrb({
+	client,
+	index,
+}: {
+	client: { name: string; logo: string; size: string; className: string };
+	index: number;
+}) {
+	// per-orb subtle drift variations
+	const drift = 6 + (index % 3) * 2;
+	const delay = 0.1 + index * 0.08;
+
+	return (
+		<motion.div
+			className={`absolute ${client.className}`}
+			initial={{ opacity: 0, y: 10, scale: 0.98 }}
+			whileInView={{ opacity: 1, y: 0, scale: 1 }}
+			viewport={{ once: true, amount: 0.4 }}
+			transition={{ duration: 0.8, ease: EASE, delay }}
+		>
+			<motion.div
+				animate={{ y: [0, -drift, 0] }}
+				transition={{
+					duration: 5 + (index % 4),
+					ease: EASE,
+					repeat: Infinity,
+					repeatType: "mirror",
+					delay: index * 0.2,
+				}}
+				className="relative"
+			>
+				{/* glass orb */}
+				<div className="relative rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_20px_60px_rgba(0,0,0,0.45)]">
+					<div
+						className={`${getSizeClasses(
+							client.size
+						)} rounded-full overflow-hidden flex items-center justify-center p-3`}
+					>
+						{/* logo */}
+						<img
+							src={client.logo}
+							alt={`${client.name} logo`}
+							className="w-full h-full object-contain opacity-90"
+						/>
 					</div>
 
-					{/* Right Side - Call to Action */}
-					<div className="space-y-8">
-						<div className="flex flex-col space-y-6">
-							<div>
-								<Heading value="Become part of the circle." />
+					{/* thin ring */}
+					<div className="pointer-events-none absolute inset-0 rounded-full">
+						<div className="absolute inset-0 rounded-full opacity-30"
+							style={{
+								background:
+									"radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), transparent 55%)",
+							}}
+						/>
+						<div className="absolute inset-0 rounded-full border border-white/10" />
+					</div>
+				</div>
+			</motion.div>
+		</motion.div>
+	);
+}
+
+export default function BecomeTheCircle() {
+	// trim to keep it curated
+	const logos = clientLogos.slice(0, 6);
+
+	return (
+		<section className="relative py-20 md:py-28 overflow-hidden">
+			{/* Section ambience */}
+			<div className="absolute inset-0">
+				<div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
+				<div className="absolute inset-0 opacity-60 bg-[radial-gradient(70%_55%_at_50%_0%,rgba(255,255,255,0.06),transparent_60%)]" />
+			</div>
+
+			<div className="relative mx-auto container px-6">
+				<div className="grid lg:grid-cols-12 gap-10 items-center">
+					{/* Left: Orbs */}
+					<div className="lg:col-span-6">
+						<div className="relative h-[360px] md:h-[420px] lg:h-[520px] rounded-3xl border border-white/10 bg-white/[0.02] overflow-hidden">
+							{/* subtle orb lines behind */}
+							<OrbLines accent="rgba(120,180,255,0.35)" />
+
+							{/* logos */}
+							<div className="absolute inset-0">
+								{logos.map((client, index) => (
+									<LogoOrb key={client.name} client={client} index={index} />
+								))}
 							</div>
-							<div className="space-y-6">
-								<p className="leading-relaxed">
-									Join the exclusive community of forward-thinking brands who
-									trust us to bring their vision to life. Your logo could be
-									floating here next.
+
+							{/* top fade (keeps it clean) */}
+							<div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent" />
+						</div>
+					</div>
+
+					{/* Right: CTA */}
+					<div className="lg:col-span-6">
+						<motion.div
+							initial={{ opacity: 0, y: 14 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.4 }}
+							transition={{ duration: 0.8, ease: EASE }}
+							className="space-y-7"
+						>
+							<div className="space-y-4">
+								<p className="text-[11px] tracking-[0.35em] uppercase text-white/60">
+									Work with Circle
+								</p>
+
+								{/* If your Heading component is very decorative, consider replacing it here */}
+								<Heading style="" value="Become part of the circle." />
+
+								<p className="max-w-xl text-white/70 leading-relaxed">
+									Join a small group of brands we partner with closely building identity, systems, and digital experiences that hold up over time.
 								</p>
 							</div>
-						</div>
 
-						{/* Benefits */}
-						<div className="space-y-4">
-							<div className="flex items-center gap-3">
-								<div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-									<Star className="w-5 h-5 text-primary" />
-								</div>
-								<span className="text-gray-700 font-medium">
-									Premium design, development and marketing solutions tailored
-									to your brand
-								</span>
+							{/* Benefits (cleaner + more premium wording) */}
+							<div className="grid gap-3 max-w-xl">
+								{[
+									{
+										icon: Star,
+										title: "Strategy-led, premium execution",
+										desc: "Direction first, then design, build, and rollout.",
+									},
+									{
+										icon: Users,
+										title: "Senior attention, small-team focus",
+										desc: "You work directly with the people doing the work.",
+									},
+									{
+										icon: Zap,
+										title: "Fast turnaround, clear scope",
+										desc: "Tight feedback loops and reliable delivery.",
+									},
+								].map((b) => (
+									<div
+										key={b.title}
+										className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4"
+									>
+										<div className="h-10 w-10 rounded-full border border-white/10 bg-white/5 grid place-items-center text-white/80">
+											<b.icon className="h-5 w-5" />
+										</div>
+										<div>
+											<p className="text-sm font-medium text-white">{b.title}</p>
+											<p className="text-sm text-white/60">{b.desc}</p>
+										</div>
+									</div>
+								))}
 							</div>
-							<div className="flex items-center gap-3">
-								<div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-									<Users className="w-5 h-5 text-primary" />
-								</div>
-								<span className="text-gray-700 font-medium">
-									Dedicated team of expert designers, developers and creators
-								</span>
-							</div>
-							<div className="flex items-center gap-3">
-								<div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-									<Zap className="w-5 h-5 text-primary" />
-								</div>
-								<span className="text-gray-700 font-medium">
-									Fast turnaround with unlimited revisions and support
-								</span>
-							</div>
-						</div>
 
-						{/* CTA Buttons */}
-						<div className="flex items-center sm:flex-row gap-4">
-							<ButtonLink
-								to="/contact-us"
-								style="bg-gradient-to-r from-primary to-secondary text-white  text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
-								title="Start Your Project"
-								icon={ArrowRight}
-							/>
-							<UnderlineLink to="/portfolio" label="View Our Work" />
-						</div>
+							{/* CTAs */}
+							<div className="flex items-center gap-4 pt-2">
+								<ButtonLink
+									to="/contact-us"
+									style="bg-white text-black text-sm font-medium shadow hover:bg-white/90 transition"
+									title="Start a project"
+									icon={ArrowRight}
+								/>
+								<UnderlineLink to="/work" label="View our work" />
+							</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>
-
-			<style>{`
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          33% {
-            transform: translateY(-10px) rotate(1deg);
-          }
-          66% {
-            transform: translateY(5px) rotate(-1deg);
-          }
-        }
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
-      `}</style>
 		</section>
 	);
 }

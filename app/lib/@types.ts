@@ -14,3 +14,11 @@ export interface IProject {
 	url: string;
 	category: string;
 }
+
+export const ACCENT = {
+	branding: "rgba(120, 180, 255, 0.55)", // electric blue
+	dev: "rgba(170, 120, 255, 0.50)", // violet
+	social: "rgba(90, 220, 200, 0.45)", // teal
+};
+
+export type WorkCategory = "web" | "branding" | "social";

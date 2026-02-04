@@ -20,6 +20,43 @@
 
 html,
 body {
-	@apply bg-[#FEFDFA];
+	@apply bg-[#000000];
 	font-family: "Aileron", "SloopScript";
+}
+
+@keyframes slideInFromLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.animate-slide-in {
+	animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.animate-slide-in-delay-1 {
+	animation: slideInFromLeft 1s ease-out 0.2s forwards;
+	opacity: 0;
+}
+
+.animate-slide-in-delay-2 {
+	animation: slideInFromLeft 1s ease-out 0.4s forwards;
+	opacity: 0;
+}
+
+.animate-slide-in-delay-3 {
+	animation: slideInFromLeft 1s ease-out 0.6s forwards;
+	opacity: 0;
+}
+
+:root {
+	--orb-a: 210 100% 65%; /* electric blue */
+	--orb-b: 265 90% 70%; /* violet */
+	--orb-c: 190 80% 60%; /* teal-blue */
+	--orb-w: 0 0% 100%; /* white */
 }

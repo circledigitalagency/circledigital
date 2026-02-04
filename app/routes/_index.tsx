@@ -1,19 +1,14 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
-import ImageViewer from "~/components/dynamic/image-viewer";
-import PDFViewer from "~/components/dynamic/pdf-viewer";
-import WebsitePlayer from "~/components/dynamic/website-player";
 import MainLayout from "~/components/layout/main";
 
-import ButtonLink from "~/components/link/button-link";
-import UnderlineLink from "~/components/link/underline-link";
-import Heading from "~/components/text/sloop-heading";
-import { Badge } from "~/components/ui/badge";
-import { designPortfolio, services, webPortfolio, whoarewe } from "~/lib/data";
-import { cn } from "~/lib/utils";
-import BecomeTheCircle from "~/components/dynamic/become-the-cirlce";
-import { useState } from "react";
-import { Button } from "~/components/ui/button";
+import { services } from "~/lib/data";
+import { AccentGlow, categoryAccent } from "~/lib/utils";
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { WorkCategory } from "~/lib/@types";
+import { WorkCard, WorkItem } from "./work";
+import { variants } from "~/lib/animations";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -43,255 +38,296 @@ export const meta: MetaFunction = () => {
 	];
 };
 
+const projects: WorkItem[] = [
+	{
+		id: "wertutors",
+		title: "WeRTutors",
+		category: "web",
+		eyebrow: "Web · Build",
+		resultLine: "A clear, parent-focused website designed to build trust and drive enquiries.",
+		services: ["Re-design", "Brand Refresh", "Development"],
+		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770204255/wertutors-hero_agbs4a.jpg",
+		featured: true,
+		liveUrl: "https://wertutors.co.za/",
+	},
+	{
+		id: "easyfind",
+		title: "Easyfind",
+		category: "web",
+		eyebrow: "Web · Build",
+		resultLine: "A clean, professional web presence that simplifies a technical offering for everyday users.",
+		services: ["Re-design", "Brand Refresh", "Development"],
+		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203465/easyfind-web_o8r7xw.jpg",
+		featured: true,
+		liveUrl: "https://easyfindtech.co.za/",
+	},
+]
+
 export default function Index() {
-	const [activeTab, setActiveTab] = useState<"design" | "web">("web");
+
 	return (
 		<MainLayout>
-			<section className="container mx-auto px-6 py-10 lg:py-16">
-				<div className="grid lg:grid-cols-2 gap-5 items-center">
-					<div>
-						<img
-							src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884652/hero_nr1r5c.png"
-							alt="hero"
-							className="w-full object-contain"
-						/>
-					</div>
-					<div className="space-y-8">
-						<Heading value="Going digital?" />
-						<h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-							You've found your digital guides.
-						</h2>
-						<p className="text-lg leading-relaxed">
-							We are your creative technology partner in this pacing digital
-							era. We blend design thinking and playful minimalism to craft
-							digital experiences that inspire and perform. We specialize in:
-						</p>
+			<section className="relative h-[90vh] min-h-[600px] overflow-hidden">
+				{/* Background with combined overlays */}
+				<motion.div
+					className="absolute inset-0 will-change-transform"
+					variants={variants.background}
+					initial="hidden"
+					animate="show"
+				>
+					<img
+						src="https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203589/home-hero_kgbcvl.jpg"
+						alt="Abstract 3D metallic sculpture"
+						className="absolute -inset-0.5 h-[calc(100%+4px)] w-[calc(100%+4px)] object-cover object-center"
+					/>
+					{/* Single overlay with combined gradients */}
+					<div
+						className="absolute inset-0"
+						style={{
+							background: `
+          linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.9) 100%),
+          radial-gradient(80% 70% at 50% 55%, transparent 40%, rgba(0,0,0,0.55) 100%)
+        `,
+						}}
+					/>
+				</motion.div>
 
-						<div className="grid grid-cols-3 gap-5">
-							<Link
-								to="/services/design"
-								className="transition-transform duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 animate-float"
-							>
-								<img
-									src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884632/design-hero_z2iemk.png"
-									alt="design"
-								/>
-							</Link>
-							<Link
-								to="/services/development"
-								className="transition-transform duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 animate-float"
-							>
-								<img
-									src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884634/development-hero_jzasu5.png"
-									alt="development"
-								/>
-							</Link>
-							<Link
-								to="/services/social-media"
-								className="transition-transform duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 animate-float"
-							>
-								<img
-									src="https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884632/social-media-hero_bqd3ld.png"
-									alt="social-media"
-								/>
-							</Link>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section className="container mx-auto px-6 py-16 space-y-16">
-				<div className="grid lg:grid-cols-2 gap-12">
-					<div>
-						<Heading value="Who are we?" />
-					</div>
-					<div className="space-y-6">
-						<p className="leading-relaxed">
-							We’re a team of designers, developers, and content creators
-							working together to shape a consistent, compelling digital
-							presence for your business.
-						</p>
-						<Link
-							to="/about-us"
-							className="text-primary hover:text-primary underline font-medium"
+				{/* Content */}
+				<div className="relative z-10 mx-auto flex h-full max-w-6xl items-start px-4 sm:px-6">
+					<motion.div
+						className="w-full text-center pt-10 md:pt-32 lg:pt-36"
+						variants={variants.container}
+						initial="hidden"
+						animate="show"
+					>
+						{/* Eyebrow */}
+						<motion.p
+							variants={variants.fadeUp}
+							className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-white/90 backdrop-blur-sm sm:gap-2 sm:px-4 sm:py-2 sm:text-[10px] sm:tracking-[0.35em] md:text-[11px]"
 						>
-							Learn more
-						</Link>
-					</div>
-				</div>
-				<div className="grid lg:grid-cols-3 gap-32">
-					{whoarewe.map((item, index) => (
-						<div className="flex flex-col items-start space-y-6" key={index}>
-							<div className="w-full h-80 overflow-hidden rounded-lg">
-								<img
-									src={item.image}
-									alt={item.title}
-									className="w-full h-full object-cover"
-								/>
-							</div>
-							<p className="text-xl font font-semibold">{item.title}</p>
-							<div className="flex items-start gap-3">
-								<span className="text-2xl font-light">0{index + 1}</span>
-								<p className="text-base leading-relaxed">{item.description}</p>
-							</div>
-						</div>
-					))}
+							<span>Branding</span>
+							<span className="opacity-30">•</span>
+							<span>Development</span>
+							<span className="opacity-30">•</span>
+							<span>Social Media</span>
+						</motion.p>
+
+						{/* Headline */}
+						<motion.h1
+							variants={variants.fadeUp}
+							className="mt-4 text-4xl font-medium leading-[1.05] tracking-[-0.02em] text-white sm:mt-5 sm:text-4xl sm:leading-[1.02] md:mt-6 md:text-6xl md:leading-[0.98] lg:text-7xl"
+						>
+							<span className="text-balance">We craft digital experiences</span>
+							<span className="mt-0.5 block text-white/85 sm:mt-1">that elevate your brand</span>
+						</motion.h1>
+
+						{/* Subcopy */}
+						<motion.p
+							variants={variants.fadeUp}
+							className="mx-auto mt-3 max-w-[42rem] px-2 text-pretty leading-relaxed text-white/80 sm:mt-4 text-base md:mt-5 md:text-lg"
+						>
+							Strategy-led branding, high-performance development, and social systems built for
+							growth.
+						</motion.p>
+
+						{/* CTAs */}
+						<motion.div
+							variants={variants.fadeUp}
+							className="mt-8 flex flex-col justify-center sm:flex-row gap-3"
+						>
+							<a
+								href="/contact-us"
+								className="inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:bg-white/90 transition"
+							>
+								Get in Touch <ArrowUpRight className="ml-2 h-4 w-4" />
+							</a>
+							<a
+								href="/work"
+								className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 text-white px-6 py-3 text-sm font-medium hover:bg-white/10 transition backdrop-blur"
+							>
+								View Our Work
+							</a>
+						</motion.div>
+					</motion.div>
 				</div>
 			</section>
+			<section id="services" className="relative py-20 md:py-28">
+				<div className="mx-auto container px-6">
+					{/* Header */}
+					<div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+						<div className="max-w-2xl">
+							<p className="text-[11px] tracking-[0.35em] uppercase text-white/60">
+								Capabilities
+							</p>
+							<h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.02em] text-white">
+								What we do, end-to-end.
+							</h2>
+							<p className="mt-4 text-white/65 leading-relaxed">
+								A small studio with a sharp process, built to help brands look better, work better, and grow.
+							</p>
+						</div>
 
-			<section className="container mx-auto px-6 py-16 space-y-16">
-				<div className="flex flex-col space-y-4">
-					<Heading value="Our Services" />
-					<p className="leading-relaxed lg:w-[75%]">
-						We digital services that blend design, technology, and storytelling.
-						Whether you’re starting from scratch or levelling up your digital
-						presence, we help shape ideas into experiences, from websites and
-						branding to content and custom development.
-					</p>
+						<div className="mt-6 md:mt-0">
+							<Link
+								to="/contact-us"
+								className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-5 py-[10px] text-sm font-medium text-white hover:bg-white/10 transition backdrop-blur"
+							>
+								Get a quote
+								<span className="ml-2 opacity-70">→</span>
+							</Link>
+						</div>
+					</div>
 
-					<UnderlineLink to="/contact-us" label="Start a project" />
-				</div>
-				<div className="grid lg:grid-cols-3 gap-32">
-					{services.map((val, index) => (
-						<div className="space-y-8" key={index}>
-							<div className="relative">
-								<div className="flex items-center gap-4 mb-2">
-									<div
-										className="w-8 h-8 rounded-lg flex items-center justify-center"
-										style={{ backgroundColor: `${val.color}20` }}
-									>
-										<div
-											className="w-3 h-3 rounded-sm"
-											style={{ backgroundColor: val.color }}
-										/>
+					{/* Cards */}
+					<div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+						{services.map((item, index) => (
+							<div className="group relative rounded-2xl border border-white/10 bg-white/[0.03] p-6
+							overflow-hidden transition hover:bg-white/[0.06]">
+								<AccentGlow accent={categoryAccent(item.category as WorkCategory,)} />
+								<div className="flex items-start justify-between">
+									<p className="text-[11px] tracking-[0.35em] uppercase text-white/55">
+										{index + 1} · {item.label}
+									</p>
+									<div className="h-9 w-9 rounded-full border border-white/10 bg-white/5 grid place-items-center text-white/70 group-hover:text-white transition">
+										{item.icon}
 									</div>
-									<h3 className="text-2xl font-bold text-gray-900 tracking-tight">
-										{val.label}
-									</h3>
+								</div>
+
+								<h3 className="mt-5 text-lg font-medium text-white">
+									{item.title}
+								</h3>
+								<p className="mt-2 text-sm text-white/60 leading-relaxed">
+									{item.description}
+								</p>
+
+								<ul className="mt-5 space-y-2 text-sm text-white/65">
+									{item.features.map((feat, index) => (
+										<li className="flex gap-2" key={index}>
+											<span className="mt-[7px] h-1 w-1 rounded-full bg-white/40" />
+											{feat}
+										</li>
+									))}
+								</ul>
+
+								<div className="mt-6">
+									<Link to={item.link} className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white transition">
+										{item.linkText} <span className="ml-2 opacity-60 group-hover:opacity-100 transition">→</span>
+									</Link>
 								</div>
 							</div>
-
-							<div className="grid gap-4">
-								{val.services.map((serv, serviceIndex) => (
-									<div
-										className="group relative bg-white border border-gray-200 p-4 hover:border-gray-300 hover:shadow-xl transition-all duration-300"
-										key={serviceIndex}
-									>
-										<div className="flex flex-row items-center space-x-2 relative z-10">
-											<serv.icon
-												className="w-4 h-4"
-												style={{ color: val.color }}
-											/>
-											<h4 className="text-base font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
-												{serv.title}
-											</h4>
-										</div>
-
-										<div
-											className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500"
-											style={{ backgroundColor: val.color }}
-										/>
-									</div>
-								))}
-							</div>
-						</div>
-					))}
+						))}
+					</div>
 				</div>
 			</section>
-			<section className="container mx-auto px-6 py-16 space-y-16">
-				<div className="grid lg:grid-cols-2 gap-12">
-					<div>
-						<Heading value="Some of our work" />
-					</div>
-					<div className="space-y-6">
-						<p className="leading-relaxed">
-							A curated collection of projects that showcase our expertise in
-							design and development. Each piece tells a unique story of
-							innovation and creativity.
-						</p>
-						<Link
-							to="/about-us"
-							className="text-primary hover:text-primary underline font-medium"
-						>
-							See more
-						</Link>
-					</div>
-				</div>
-				<div className="flex justify-start">
-					<div className="bg-white/60">
-						<div className="flex gap-2">
-							<Button
-								variant={activeTab === "web" ? "default" : "ghost"}
-								onClick={() => setActiveTab("web")}
-								className={`p-4 transition-all duration-300 ${
-									activeTab === "web"
-										? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
-										: "text-gray-600 hover:text-gray-900"
-								}`}
-							>
-								Web Portfolio
-								<Badge
-									variant="secondary"
-									className="ml-2 bg-white/20 text-current"
+			<section id="work" className="relative py-20 md:py-28">
+				<div className="container mx-auto px-6">
+					<div className="space-y-10 items-end">
+						{/* Left intro */}
+						<div className="grid md:grid-cols-2">
+							<div>
+								<p className="text-[11px] tracking-[0.35em] uppercase text-white/60">
+									Selected work
+								</p>
+								<h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.02em] text-white">
+									A few projects we’re proud of.
+								</h2>
+								<p className="mt-4 text-white/65 max-w-md leading-relaxed">
+									Strategy-led design and build, delivered with clarity. Here’s what it looks like in practice.
+								</p>
+							</div>
+
+							<div className="flex items-start mt-2 md:mt-0 md:justify-end md:items-end w-full">
+								<a
+									href="/work"
+									className="inline-flex items-center h-fit rounded-full border border-white/15 bg-white/5 px-5 py-[10px] text-sm font-medium text-white hover:bg-white/10 transition backdrop-blur"
 								>
-									{webPortfolio.length}
-								</Badge>
-							</Button>
-							<Button
-								variant={activeTab === "design" ? "default" : "ghost"}
-								onClick={() => setActiveTab("design")}
-								className={`p-4 transition-all duration-300 ${
-									activeTab === "design"
-										? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
-										: "text-gray-600 hover:text-gray-900"
-								}`}
-							>
-								Design Portfolio
-								<Badge
-									variant="secondary"
-									className="ml-2 bg-white/20 text-current"
-								>
-									{designPortfolio.length}
-								</Badge>
-							</Button>
+									View full portfolio
+									<ArrowUpRight className="w-4 h-4 ml-4" />
+								</a>
+							</div>
 						</div>
-					</div>
-				</div>
-				{activeTab === "design" && (
-					<div className="flex flex-col space-y-6">
-						<div className="grid lg:grid-cols-3 gap-12">
-							{designPortfolio.map((proj, index) => (
-								<div key={index} className="space-y-2">
-									<ImageViewer
-										initialUrl={proj.url}
-										height={400}
-										className="col-span-1"
-										title={proj.title}
-										category={proj.category}
-									/>
-								</div>
+
+						{/* Right cards */}
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+							{projects.map((item) => (
+								<WorkCard key={item.id} item={item} onOpen={() => { }} />
 							))}
 						</div>
 					</div>
-				)}
-				{activeTab === "web" && (
-					<div className="flex flex-col space-y-6">
-						<div className="grid lg:grid-cols-3 gap-12">
-							{webPortfolio.map((proj, index) => (
-								<div key={index} className="space-y-2">
-									<WebsitePlayer
-										initialUrl={proj.url}
-										height={400}
-										className="col-span-1"
-										title={proj.title}
-									/>
-								</div>
-							))}
+				</div>
+			</section>
+			<section className="relative py-20 md:py-28">
+				<div className="mx-auto container px-6">
+
+					{/* CTA Panel */}
+					<div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl">
+
+						{/* Background image INSIDE panel */}
+						<div className="absolute inset-0">
+							<img
+								src="https://res.cloudinary.com/dfxorvtuc/image/upload/v1770202891/cta_dk2f0t.jpg"
+								alt=""
+								className="h-full w-full object-cover object-center"
+							/>
+							{/* Glass overlays */}
+							<div
+								className="absolute inset-0"
+								style={{
+									background: `
+              linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.9) 100%),
+              radial-gradient(80% 70% at 50% 55%, transparent 40%, rgba(0,0,0,0.55) 100%)
+            `,
+								}}
+							/>
 						</div>
+
+						{/* Content */}
+						<div className="relative z-10 px-8 py-14 md:px-14 md:py-16">
+							<div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+								{/* Copy */}
+								<div className="space-y-5 max-w-xl">
+									<p className="text-[11px] tracking-[0.35em] uppercase text-white/60">
+										Work with Circle
+									</p>
+
+									<h2 className="text-3xl md:text-4xl font-medium tracking-[-0.02em] text-white">
+										Ready to build something considered?
+									</h2>
+
+									<p className="text-white/65 leading-relaxed">
+										We partner with brands that value clarity, craft, and long-term thinking -
+										helping turn ideas into digital systems that last.
+									</p>
+								</div>
+
+								{/* Actions */}
+								<div className="flex flex-col sm:flex-row gap-4 md:justify-end">
+									<a
+										href="/contact-us"
+										className="inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:bg-white/90 transition"
+									>
+										Start a project
+										<span className="ml-2">→</span>
+									</a>
+
+									<a
+										href="/work"
+										className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 text-white px-6 py-3 text-sm font-medium hover:bg-white/10 transition backdrop-blur"
+									>
+										View our work
+									</a>
+								</div>
+							</div>
+						</div>
+
+						{/* Panel edge highlight */}
+						<div className="pointer-events-none absolute inset-0 rounded-3xl
+                      ring-1 ring-inset ring-white/10" />
 					</div>
-				)}
+				</div>
 			</section>
 
-			<BecomeTheCircle />
-		</MainLayout>
+		</MainLayout >
 	);
 }
