@@ -12,7 +12,7 @@ import { variants } from "~/lib/animations";
 
 export const meta: MetaFunction = () => {
 	return [
-		{ title: "Digital Agency | Design, Development & Social Media Experts" },
+		{ title: "Digital Agency | Branding, Development & Social Media Experts" },
 		{
 			name: "description",
 			content:
@@ -21,7 +21,7 @@ export const meta: MetaFunction = () => {
 
 		{
 			property: "og:title",
-			content: "Digital Agency | Design, Development & Social Media Experts",
+			content: "Digital Agency | Branding, Development & Social Media Experts",
 		},
 		{
 			property: "og:description",
