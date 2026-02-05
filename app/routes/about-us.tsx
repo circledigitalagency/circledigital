@@ -1,9 +1,39 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import MainLayout from "~/components/layout/main";
-import { WorkCategory } from "~/lib/@types";
 import { variants } from "~/lib/animations";
-import { AccentGlow, categoryAccent } from "~/lib/utils";
+import type { MetaFunction } from "@remix-run/node";
+
+const ABOUT_TITLE =
+	"About Circle Digital | Strategy-led Branding, Development & Social Systems";
+
+const ABOUT_DESCRIPTION =
+	"Circle Digital is a small senior studio based in South Africa. We build calm, high-performing brand and web systems—strategy, design, development, and content—built to last beyond launch.";
+
+const ABOUT_IMAGE =
+	"https://res.cloudinary.com/dfxorvtuc/image/upload/v1770293729/Screenshot_2026-02-05_at_14.12.47_qebbly.png";
+
+const CANONICAL_URL = "https://circledigital.co.za/about-us";
+
+export const meta: MetaFunction = () => {
+	return [
+		{ title: ABOUT_TITLE },
+		{ name: "description", content: ABOUT_DESCRIPTION },
+
+		// Canonical
+		{ tagName: "link", rel: "canonical", href: CANONICAL_URL },
+
+		// Open Graph
+		{ property: "og:type", content: "website" },
+		{ property: "og:site_name", content: "Circle Digital" },
+		{ property: "og:title", content: ABOUT_TITLE },
+		{ property: "og:description", content: ABOUT_DESCRIPTION },
+		{ property: "og:url", content: CANONICAL_URL },
+		{ property: "og:image", content: ABOUT_IMAGE },
+		{ property: "og:image:alt", content: "Circle Digital — About page hero image" },
+	];
+};
+
 
 function GlassCard({
 	eyebrow,

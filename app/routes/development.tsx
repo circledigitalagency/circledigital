@@ -3,6 +3,45 @@ import MainLayout from "~/components/layout/main";
 import { WorkCategory } from "~/lib/@types";
 import { AccentGlow, categoryAccent } from "~/lib/utils";
 
+import type { MetaFunction } from "@remix-run/node";
+
+const DEVELOPMENT_TITLE =
+    "Web Development Services | Circle Digital — Websites & Business Systems";
+
+const DEVELOPMENT_DESCRIPTION =
+    "Circle Digital builds fast, scalable websites and web systems designed for performance, clarity, and long-term growth. Product-minded development from strategy to launch.";
+
+const DEVELOPMENT_IMAGE =
+    "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770293728/Screenshot_2026-02-05_at_14.13.11_uf34i3.png";
+
+const CANONICAL_URL = "https://circledigital.co.za/development";
+
+export const meta: MetaFunction = () => {
+    return [
+        { title: DEVELOPMENT_TITLE },
+        { name: "description", content: DEVELOPMENT_DESCRIPTION },
+
+        // Canonical
+        { tagName: "link", rel: "canonical", href: CANONICAL_URL },
+
+        // Open Graph
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Circle Digital" },
+        { property: "og:title", content: DEVELOPMENT_TITLE },
+        { property: "og:description", content: DEVELOPMENT_DESCRIPTION },
+        { property: "og:url", content: CANONICAL_URL },
+        { property: "og:image", content: DEVELOPMENT_IMAGE },
+        { property: "og:image:alt", content: "Circle Digital development services hero image" },
+
+        // Twitter
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: DEVELOPMENT_TITLE },
+        { name: "twitter:description", content: DEVELOPMENT_DESCRIPTION },
+        { name: "twitter:image", content: DEVELOPMENT_IMAGE },
+    ];
+};
+
+
 function GlassCard({
     eyebrow,
     title,
@@ -29,16 +68,6 @@ function GlassCard({
                     </li>
                 ))}
             </ul>
-        </div>
-    );
-}
-
-function StepCard({ n, t, d }: { n: string; t: string; d: string }) {
-    return (
-        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 hover:bg-white/[0.06] transition">
-            <p className="text-[11px] tracking-[0.35em] uppercase text-white/50">{n}</p>
-            <h3 className="mt-3 text-white font-medium">{t}</h3>
-            <p className="mt-2 text-sm text-white/60 leading-relaxed">{d}</p>
         </div>
     );
 }

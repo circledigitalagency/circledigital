@@ -2,6 +2,44 @@ import { ArrowUpRight } from "lucide-react";
 import MainLayout from "~/components/layout/main";
 import { WorkCategory } from "~/lib/@types";
 import { AccentGlow, categoryAccent } from "~/lib/utils";
+import type { MetaFunction } from "@remix-run/node";
+
+const SOCIAL_TITLE =
+    "Social Media & Content Production | Circle Digital — Strategy, Shoots & Systems";
+
+const SOCIAL_DESCRIPTION =
+    "Circle Digital helps brands build a consistent social presence through content strategy, high-quality video production, planned shoots, and social systems designed for long-term growth.";
+
+const SOCIAL_IMAGE =
+    "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770293738/Screenshot_2026-02-05_at_14.13.22_xbxen9.png";
+
+const CANONICAL_URL = "https://circledigital.co.za/social-media";
+
+export const meta: MetaFunction = () => {
+    return [
+        { title: SOCIAL_TITLE },
+        { name: "description", content: SOCIAL_DESCRIPTION },
+
+        // Canonical
+        { tagName: "link", rel: "canonical", href: CANONICAL_URL },
+
+        // Open Graph
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Circle Digital" },
+        { property: "og:title", content: SOCIAL_TITLE },
+        { property: "og:description", content: SOCIAL_DESCRIPTION },
+        { property: "og:url", content: CANONICAL_URL },
+        { property: "og:image", content: SOCIAL_IMAGE },
+        { property: "og:image:alt", content: "Circle Digital social media and content production hero image" },
+
+        // Twitter
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: SOCIAL_TITLE },
+        { name: "twitter:description", content: SOCIAL_DESCRIPTION },
+        { name: "twitter:image", content: SOCIAL_IMAGE },
+    ];
+};
+
 
 function GlassCard({
     eyebrow,

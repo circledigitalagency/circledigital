@@ -6,13 +6,7 @@ import {
 	ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-
 import "./tailwind.css";
-import {
-	designServices,
-	developmentServices,
-	socialServices,
-} from "./lib/data";
 
 export const links: LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -28,26 +22,6 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-	const serviceToJSONLD = (
-		title: string,
-		description: string,
-		category: string
-	) => ({
-		"@type": "Service",
-		name: title,
-		description,
-		serviceType: category,
-		areaServed: "South Africa",
-		url: `https://circledigital.agency/services/${category
-			.toLowerCase()
-			.replace(/\s+/g, "-")}`,
-		provider: {
-			"@type": "Organization",
-			name: "Circle Digital",
-			url: "https://circledigital.agency",
-		},
-	});
-
 	return (
 		<html lang="en">
 			<head>
@@ -76,7 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 							"@type": "Organization",
 							name: "CircleDigital",
 							url: "https://www.circledigital.co.za",
-							logo: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884633/logo_xmafed.png",
+							logo: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770204263/logo_ivdt4y.png",
 							description:
 								"CircleDigital is a creative technology studio shaping how brands live, move, and grow in the digital world.",
 							foundingDate: "2025-05-20",
@@ -96,50 +70,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 							"@type": "ItemList",
 							name: "Portfolio Projects",
 							url: "https://www.circledigital.co.za/work",
-							itemListElement: [
-								{
-									"@type": "WebSite",
-									name: "CSResources",
-									url: "https://csresources.co.za/",
-								},
-								{
-									"@type": "WebSite",
-									name: "Freedom27",
-									url: "https://freedom27.co.za/",
-								},
-								{
-									"@type": "CreativeWork",
-									name: "EasyFindTech",
-									url: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1753964769/EasyFindTech_-_Home1_-_Light_su5xqa.png",
-									about: "UI/UX Design",
-								},
-
-								{
-									"@type": "CreativeWork",
-									name: "The Creative Agency",
-									url: "https://res.cloudinary.com/dg1g6ctku/image/upload/v1754038815/T-_Home_1_jmycgk.png",
-									about: "UI/UX Design",
-								},
-							],
-						}),
-					}}
-				/>
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify({
-							"@context": "https://schema.org",
-							"@graph": [
-								...socialServices.map((s) =>
-									serviceToJSONLD(s.title, s.description, "Social Media")
-								),
-								...designServices.map((s) =>
-									serviceToJSONLD(s.title, s.description, "Design")
-								),
-								...developmentServices.map((s) =>
-									serviceToJSONLD(s.title, s.description, "Web Development")
-								),
-							],
 						}),
 					}}
 				/>

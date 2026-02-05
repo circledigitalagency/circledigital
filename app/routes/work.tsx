@@ -3,6 +3,44 @@ import { ArrowUpRight, X } from "lucide-react";
 import MainLayout from "~/components/layout/main";
 import { AccentGlow, categoryAccent } from "~/lib/utils";
 import { WorkCategory } from "~/lib/@types";
+import type { MetaFunction } from "@remix-run/node";
+
+const WORK_TITLE =
+	"Work | Circle Digital — Websites, Branding & Content Systems";
+
+const WORK_DESCRIPTION =
+	"Explore a selection of Circle Digital projects across web development, branding, and social content systems — strategy-led work built with clarity, craft, and performance.";
+
+const WORK_IMAGE =
+	"https://res.cloudinary.com/dfxorvtuc/image/upload/v1770293730/Screenshot_2026-02-05_at_14.13.33_q5dvgn.png";
+
+const CANONICAL_URL = "https://circledigital.co.za/work";
+
+export const meta: MetaFunction = () => {
+	return [
+		{ title: WORK_TITLE },
+		{ name: "description", content: WORK_DESCRIPTION },
+
+		// Canonical
+		{ tagName: "link", rel: "canonical", href: CANONICAL_URL },
+
+		// Open Graph
+		{ property: "og:type", content: "website" },
+		{ property: "og:site_name", content: "Circle Digital" },
+		{ property: "og:title", content: WORK_TITLE },
+		{ property: "og:description", content: WORK_DESCRIPTION },
+		{ property: "og:url", content: CANONICAL_URL },
+		{ property: "og:image", content: WORK_IMAGE },
+		{ property: "og:image:alt", content: "Circle Digital portfolio and work showcase hero image" },
+
+		// Twitter
+		{ name: "twitter:card", content: "summary_large_image" },
+		{ name: "twitter:title", content: WORK_TITLE },
+		{ name: "twitter:description", content: WORK_DESCRIPTION },
+		{ name: "twitter:image", content: WORK_IMAGE },
+	];
+};
+
 
 export type WorkItem = {
 	id: string;

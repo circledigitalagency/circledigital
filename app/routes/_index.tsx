@@ -1,7 +1,5 @@
-import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import MainLayout from "~/components/layout/main";
-
 import { services } from "~/lib/data";
 import { AccentGlow, categoryAccent } from "~/lib/utils";
 import { ArrowUpRight } from "lucide-react";
@@ -10,33 +8,44 @@ import { WorkCategory } from "~/lib/@types";
 import { WorkCard, WorkItem } from "./work";
 import { variants } from "~/lib/animations";
 
+import type { MetaFunction } from "@remix-run/node";
+
+const HOME_TITLE =
+	"Circle Digital — Branding, Web Development & Social Media in South Africa";
+
+const HOME_DESCRIPTION =
+	"Circle Digital is a creative studio building strategy-led branding, high-performance websites, and content systems for modern brands. Built with clarity, craft, and long-term thinking.";
+
+const HOME_IMAGE =
+	"https://res.cloudinary.com/dfxorvtuc/image/upload/v1770285768/Screenshot_2026-02-05_at_12.01.48_gcryfg.png";
+
+const CANONICAL_URL = "https://circledigital.co.za/";
+
 export const meta: MetaFunction = () => {
 	return [
-		{ title: "Digital Agency | Branding, Development & Social Media Experts" },
-		{
-			name: "description",
-			content:
-				"We’re your creative technology partner, blending design thinking and playful minimalism to craft digital experiences that inspire and perform. Explore our work and services.",
-		},
+		{ title: HOME_TITLE },
+		{ name: "description", content: HOME_DESCRIPTION },
 
-		{
-			property: "og:title",
-			content: "Digital Agency | Branding, Development & Social Media Experts",
-		},
-		{
-			property: "og:description",
-			content:
-				"We create digital experiences that inspire. Our team of designers, developers, and content creators helps shape brands through technology, storytelling, and design.",
-		},
-		{
-			property: "og:image",
-			content:
-				"https://res.cloudinary.com/dfxorvtuc/image/upload/v1770285768/Screenshot_2026-02-05_at_12.01.48_gcryfg.png",
-		},
+		// Canonical
+		{ tagName: "link", rel: "canonical", href: CANONICAL_URL },
+
+		// Open Graph
 		{ property: "og:type", content: "website" },
-		{ property: "og:url", content: "https://www.circledigital.co.za" },
+		{ property: "og:site_name", content: "Circle Digital" },
+		{ property: "og:title", content: HOME_TITLE },
+		{ property: "og:description", content: HOME_DESCRIPTION },
+		{ property: "og:url", content: CANONICAL_URL },
+		{ property: "og:image", content: HOME_IMAGE },
+		{ property: "og:image:alt", content: "Circle Digital homepage hero image" },
+
+		// Twitter
+		{ name: "twitter:card", content: "summary_large_image" },
+		{ name: "twitter:title", content: HOME_TITLE },
+		{ name: "twitter:description", content: HOME_DESCRIPTION },
+		{ name: "twitter:image", content: HOME_IMAGE },
 	];
 };
+
 
 const projects: WorkItem[] = [
 	{

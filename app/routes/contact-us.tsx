@@ -8,6 +8,45 @@ import MainLayout from "~/components/layout/main";
 import { FieldLabel, Select, TextArea, Input, Card } from "~/components/ui/form-helpers";
 import { sendContactEmails } from "~/lib/email.server";
 
+import type { MetaFunction } from "@remix-run/node";
+
+const CONTACT_TITLE =
+	"Contact Circle Digital | Start a Branding, Web or Content Project";
+
+const CONTACT_DESCRIPTION =
+	"Tell Circle Digital what you’re building and what success looks like. We’ll respond with clear next steps within 1–2 business days.";
+
+const CONTACT_IMAGE =
+	"https://res.cloudinary.com/dfxorvtuc/image/upload/v1770293889/Screenshot_2026-02-05_at_14.17.59_keahoy.png";
+
+const CANONICAL_URL = "https://circledigital.co.za/contact-us";
+
+export const meta: MetaFunction = () => {
+	return [
+		{ title: CONTACT_TITLE },
+		{ name: "description", content: CONTACT_DESCRIPTION },
+
+		// Canonical
+		{ tagName: "link", rel: "canonical", href: CANONICAL_URL },
+
+		// Open Graph
+		{ property: "og:type", content: "website" },
+		{ property: "og:site_name", content: "Circle Digital" },
+		{ property: "og:title", content: CONTACT_TITLE },
+		{ property: "og:description", content: CONTACT_DESCRIPTION },
+		{ property: "og:url", content: CANONICAL_URL },
+		{ property: "og:image", content: CONTACT_IMAGE },
+		{ property: "og:image:alt", content: "Circle Digital contact page hero image" },
+
+		// Twitter
+		{ name: "twitter:card", content: "summary_large_image" },
+		{ name: "twitter:title", content: CONTACT_TITLE },
+		{ name: "twitter:description", content: CONTACT_DESCRIPTION },
+		{ name: "twitter:image", content: CONTACT_IMAGE },
+	];
+};
+
+
 /** -------------------------
  *  Zod schema
  *  ------------------------- */

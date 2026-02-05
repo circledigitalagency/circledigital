@@ -2,6 +2,44 @@ import { ArrowUpRight } from "lucide-react";
 import MainLayout from "~/components/layout/main";
 import { WorkCategory } from "~/lib/@types";
 import { AccentGlow, categoryAccent } from "~/lib/utils";
+import type { MetaFunction } from "@remix-run/node";
+
+const BRANDING_TITLE =
+    "Branding Services | Circle Digital — Positioning, Identity & Brand Systems";
+
+const BRANDING_DESCRIPTION =
+    "Circle Digital builds strategic branding systems — positioning, identity design, and brand guidelines that give businesses clarity, consistency, and long-term direction.";
+
+const BRANDING_IMAGE =
+    "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770293730/Screenshot_2026-02-05_at_14.12.59_jcgzct.png";
+
+const CANONICAL_URL = "https://circledigital.co.za/branding";
+
+export const meta: MetaFunction = () => {
+    return [
+        { title: BRANDING_TITLE },
+        { name: "description", content: BRANDING_DESCRIPTION },
+
+        // Canonical
+        { tagName: "link", rel: "canonical", href: CANONICAL_URL },
+
+        // Open Graph
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Circle Digital" },
+        { property: "og:title", content: BRANDING_TITLE },
+        { property: "og:description", content: BRANDING_DESCRIPTION },
+        { property: "og:url", content: CANONICAL_URL },
+        { property: "og:image", content: BRANDING_IMAGE },
+        { property: "og:image:alt", content: "Circle Digital branding services hero image" },
+
+        // Twitter
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: BRANDING_TITLE },
+        { name: "twitter:description", content: BRANDING_DESCRIPTION },
+        { name: "twitter:image", content: BRANDING_IMAGE },
+    ];
+};
+
 
 function GlassCard({
     eyebrow,
@@ -29,16 +67,6 @@ function GlassCard({
                     </li>
                 ))}
             </ul>
-        </div>
-    );
-}
-
-function StepCard({ n, t, d }: { n: string; t: string; d: string }) {
-    return (
-        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 hover:bg-white/[0.06] transition">
-            <p className="text-[11px] tracking-[0.35em] uppercase text-white/50">{n}</p>
-            <h3 className="mt-3 text-white font-medium">{t}</h3>
-            <p className="mt-2 text-sm text-white/60 leading-relaxed">{d}</p>
         </div>
     );
 }
