@@ -7,12 +7,12 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 	const pages = [
 		"/",
-		"/about",
+		"/about-us",
 		"/work",
 		"/contact-us",
-		"/services/branding",
-		"/services/development",
-		"/services/social-media",
+		"/branding",
+		"/development",
+		"/social-media",
 	];
 
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
