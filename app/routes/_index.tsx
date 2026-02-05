@@ -31,7 +31,7 @@ export const meta: MetaFunction = () => {
 		{
 			property: "og:image",
 			content:
-				"https://res.cloudinary.com/dg1g6ctku/image/upload/v1753884652/hero_nr1r5c.png",
+				"https://res.cloudinary.com/dfxorvtuc/image/upload/v1770285768/Screenshot_2026-02-05_at_12.01.48_gcryfg.png",
 		},
 		{ property: "og:type", content: "website" },
 		{ property: "og:url", content: "https://www.circledigital.co.za" },
