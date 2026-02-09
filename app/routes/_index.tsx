@@ -76,7 +76,7 @@ export default function Index() {
 
 	return (
 		<MainLayout>
-			<section className="relative h-[90vh] min-h-[600px] overflow-hidden">
+			<section className="relative h-[75vh] md:h-[90vh] overflow-hidden">
 				{/* Background with combined overlays */}
 				<motion.div
 					className="absolute inset-0 will-change-transform"
@@ -102,7 +102,7 @@ export default function Index() {
 				</motion.div>
 
 				{/* Content */}
-				<div className="relative z-10 mx-auto flex h-full max-w-6xl items-start px-4 sm:px-6">
+				<div className="relative z-10 mx-auto flex h-full max-w-6xl items-center md:items-start px-4 sm:px-6">
 					<motion.div
 						className="w-full text-center pt-10 md:pt-32 lg:pt-36"
 						variants={variants.container}
