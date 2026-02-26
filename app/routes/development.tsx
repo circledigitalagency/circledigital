@@ -6,10 +6,10 @@ import { AccentGlow, categoryAccent } from "~/lib/utils";
 import type { MetaFunction } from "@remix-run/node";
 
 const DEVELOPMENT_TITLE =
-    "Web Development Services | Circle Digital — Websites & Business Systems";
+    "High-Performance Websites & Web Systems | Circle Digital";
 
 const DEVELOPMENT_DESCRIPTION =
-    "Circle Digital builds fast, scalable websites and web systems designed for performance, clarity, and long-term growth. Product-minded development from strategy to launch.";
+    "Circle Digital builds high-performance websites and web systems that improve credibility and convert attention into enquiries. Product-minded development from strategy to launch.";
 
 const DEVELOPMENT_IMAGE =
     "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770293728/Screenshot_2026-02-05_at_14.13.11_uf34i3.png";
@@ -56,14 +56,14 @@ function GlassCard({
     return (
         <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-xl hover:bg-white/[0.06] transition">
             <AccentGlow accent={categoryAccent("web" as WorkCategory,)} />
-            <p className="relative text-[11px] tracking-[0.35em] uppercase text-white/55">{eyebrow}</p>
-            <h3 className="relative mt-3 text-lg font-medium text-white">{title}</h3>
-            <p className="relative mt-2 text-sm leading-relaxed text-white/65">{body}</p>
+            <p className="relative text-[11px] tracking-[0.35em] uppercase text-blue-400/55">{eyebrow}</p>
+            <h3 className="relative mt-3 text-xl font-medium text-white">{title}</h3>
+            <p className="relative mt-2 text-base leading-relaxed text-white/65">{body}</p>
 
-            <ul className="relative mt-5 space-y-2 text-sm text-white/65">
+            <ul className="relative mt-5 space-y-2 text-white/65">
                 {items.map((t) => (
                     <li key={t} className="flex gap-2">
-                        <span className="mt-[7px] h-1 w-1 rounded-full bg-white/40" />
+                        <span className="mt-[7px] h-1 w-1 rounded-full bg-blue-400/40" />
                         {t}
                     </li>
                 ))}
@@ -96,11 +96,11 @@ export default function DevelopmentPage() {
                     <p className="text-[11px] tracking-[0.35em] uppercase text-white/60">Development</p>
 
                     <h1 className="mt-5 text-4xl md:text-6xl font-medium leading-[0.98] tracking-[-0.02em] text-white max-w-4xl">
-                        Websites and systems built to perform — not just exist.
+                        Websites and systems built to convert — fast, clear, and credible.
                     </h1>
 
                     <p className="mt-6 text-white/65 leading-relaxed max-w-2xl">
-                        We design and develop fast, scalable digital experiences that support real business goals and hold up over time.
+                        We design and develop high-performance websites and web platforms that turn attention into enquiries, support real workflows, and stay easy to maintain as you grow.
                     </p>
 
                     <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -125,19 +125,56 @@ export default function DevelopmentPage() {
             <section className="relative py-16 md:py-20">
                 <div className="mx-auto container px-6">
                     <div className="max-w-3xl">
-                        <p className="text-[11px] tracking-[0.35em] uppercase text-white/60">The problem</p>
+                        <p className="text-[11px] tracking-[0.35em] uppercase text-blue-400/60">The problem</p>
                         <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.02em] text-white">
-                            Most websites look fine. They just don’t work hard enough.
+                            Most websites don’t fail visually. They fail commercially.
                         </h2>
                         <div className="mt-5 space-y-4 text-white/65 leading-relaxed">
                             <p>
-                                We often see websites that are slow, hard to maintain, and disconnected from how the business actually
-                                operates. They look okay — but they don’t support growth.
+                                We often see sites that look good but load slowly, bury the message, and leave visitors unsure what to do next. The result is weak conversion: fewer enquiries, slower trust, and missed opportunities.
                             </p>
                             <p>
-                                Development isn’t just code. It’s building systems that support clarity, performance, and longevity.
+                                Development is not just code - it’s building a system that supports credibility, performance, and growth over time.
                             </p>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section className="relative py-16 md:py-20">
+                <div className="mx-auto container px-6">
+                    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-10 backdrop-blur-xl">
+
+                        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+                            <div className="max-w-xl">
+                                <p className="text-[11px] tracking-[0.35em] uppercase text-blue-400/60">
+                                    What this gives you
+                                </p>
+                                <h3 className="mt-4 text-2xl md:text-3xl font-medium tracking-[-0.02em] text-white">
+                                    A digital presence that works harder.
+                                </h3>
+                                <p className="mt-4 text-white/65 leading-relaxed">
+                                    Beyond design, we build systems that load fast, convert clearly, and support
+                                    how your business actually operates.
+                                </p>
+                            </div>
+
+                            <ul className="space-y-3 text-sm md:text-[15px] text-white/75">
+                                {[
+                                    "Faster load times and improved UX",
+                                    "Clear conversion paths and CTAs",
+                                    "Reduced manual admin through smarter systems",
+                                    "Scalable architecture for future growth",
+                                    "A platform your team can confidently manage",
+                                ].map((item) => (
+                                    <li key={item} className="flex gap-3">
+                                        <span className="mt-1.5 h-2 w-2 rounded-full bg-blue-400/40 shrink-0" />
+                                        <span className="leading-relaxed">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10" />
                     </div>
                 </div>
             </section>
@@ -146,9 +183,9 @@ export default function DevelopmentPage() {
             <section className="relative py-16 md:py-20">
                 <div className="mx-auto container px-6">
                     <div className="max-w-2xl">
-                        <p className="text-[11px] tracking-[0.35em] uppercase text-white/60">What we build</p>
+                        <p className="text-[11px] tracking-[0.35em] uppercase text-blue-400/60">What we build</p>
                         <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.02em] text-white">
-                            Product-minded development, end-to-end.
+                            Conversion-led builds, engineered for the real world.
                         </h2>
                     </div>
 
@@ -156,7 +193,7 @@ export default function DevelopmentPage() {
                         <GlassCard
                             eyebrow="01 · Marketing Websites"
                             title="Brand-led, conversion-focused"
-                            body="Fast, clean builds that communicate clearly and convert confidently."
+                            body="Fast, brand-led websites with clear messaging and journeys designed to drive enquiries."
                             items={[
                                 "Performance-first architecture",
                                 "Clear user journeys",
@@ -167,7 +204,7 @@ export default function DevelopmentPage() {
                         <GlassCard
                             eyebrow="02 · Web Apps & Tools"
                             title="Systems for real workflows"
-                            body="Custom dashboards and tools designed around how your business actually runs."
+                            body="Custom dashboards and tools built around your workflow so less manual admin, more momentum."
                             items={[
                                 "Admin platforms & dashboards",
                                 "Custom logic and integrations",
@@ -178,7 +215,7 @@ export default function DevelopmentPage() {
                         <GlassCard
                             eyebrow="03 · Infrastructure"
                             title="Quiet, reliable foundations"
-                            body="Hosting, optimisation, and support that keep everything smooth behind the scenes."
+                            body="Quiet infrastructure that keeps everything stable - deployment, performance, security, and support."
                             items={[
                                 "Hosting & deployment setup",
                                 "Performance optimisation",

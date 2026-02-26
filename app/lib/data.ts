@@ -290,15 +290,15 @@ export const clientLogos = [
 export const services = [
 	{
 		id: "01",
-		label: "Branding",
+		label: "Brand positioning",
 		icon: "✦",
-		title: "Brand identity & direction",
+		title: "Brand positioning & identity",
 		description:
-			"Clear positioning and visuals that feel intentional, and instantly elevate perception.",
+			"Repositioning your brand with sharper messaging and a premium visual system that matches the level you’re operating at.",
 		features: [
-			"Identity systems & guidelines",
-			"Logo refinement & rollout",
-			"Creative direction for campaigns",
+			"Positioning & messaging clarity",
+			"Identity systems & brand guidelines",
+			"Campaign-ready creative direction",
 		],
 		link: "/branding",
 		linkText: "Explore branding",
@@ -306,14 +306,14 @@ export const services = [
 	},
 	{
 		id: "02",
-		label: "Development",
+		label: "Websites",
 		icon: "⬚",
-		title: "Websites & product builds",
+		title: "High-performance websites",
 		description:
-			"Fast, modern builds with clean UX, built for conversion, performance, and clarity.",
+			"Conversion-focused websites and digital platforms built to turn attention into enquiries.",
 		features: [
 			"Marketing websites & landing pages",
-			"Web apps & internal tools",
+			"Web apps & internal platforms",
 			"Integrations, automation & hosting",
 		],
 		link: "/development",
@@ -322,15 +322,15 @@ export const services = [
 	},
 	{
 		id: "03",
-		label: "Social",
+		label: "Content systems",
 		icon: "◐",
-		title: "Content systems & growth",
+		title: "Content & growth systems",
 		description:
-			"Consistent visuals and messaging that build trust, plus campaigns that convert.",
+			"Structured content and paid campaigns designed to build authority and drive measurable acquisition.",
 		features: [
-			"Social design & templates",
-			"Content planning & rollout",
-			"Paid ads & performance tuning",
+			"Social design systems & templates",
+			"Content strategy & rollout",
+			"Paid media & performance optimisation",
 		],
 		link: "/social-media",
 		linkText: "Explore social",

@@ -6,10 +6,10 @@ import { WorkCategory } from "~/lib/@types";
 import type { MetaFunction } from "@remix-run/node";
 
 const WORK_TITLE =
-	"Work | Circle Digital — Websites, Branding & Content Systems";
+	"Work | Circle Digital — Repositioning, Websites & Content Systems";
 
 const WORK_DESCRIPTION =
-	"Explore a selection of Circle Digital projects across web development, branding, and social content systems — strategy-led work built with clarity, craft, and performance.";
+	"A selection of Circle Digital projects focused on brand repositioning, high-performance websites, and content systems — built to elevate credibility and drive measurable growth.";
 
 const WORK_IMAGE =
 	"https://res.cloudinary.com/dfxorvtuc/image/upload/v1770293730/Screenshot_2026-02-05_at_14.13.33_q5dvgn.png";
@@ -59,8 +59,8 @@ const projects: WorkItem[] = [
 		id: "wertutors",
 		title: "WeRTutors",
 		category: "web",
-		eyebrow: "Web · Build",
-		resultLine: "A clear, parent-focused website designed to build trust and drive enquiries.",
+		eyebrow: "Repositioning · Web",
+		resultLine: "Repositioned the brand to speak to professional educators and parents — clarifying messaging and building a website designed to drive consistent enquiries.",
 		services: ["Re-design", "Brand Refresh", "Development"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770204255/wertutors-hero_agbs4a.jpg",
 		featured: true,
@@ -70,8 +70,8 @@ const projects: WorkItem[] = [
 		id: "easyfind",
 		title: "Easyfind",
 		category: "web",
-		eyebrow: "Web · Build",
-		resultLine: "A clean, professional web presence that simplifies a technical offering for everyday users.",
+		eyebrow: "Repositioning · Web",
+		resultLine: "Clarified a technical offering through sharper positioning and a website built to improve credibility and acquisition.",
 		services: ["Re-design", "Brand Refresh", "Development"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203465/easyfind-web_o8r7xw.jpg",
 		featured: true,
@@ -81,7 +81,7 @@ const projects: WorkItem[] = [
 		id: "freedom27brand",
 		title: "Freedom 27",
 		category: "branding",
-		eyebrow: "Branding · Identity",
+		eyebrow: "Repositioning · Identity",
 		resultLine: "A calm, human-centred identity rooted in balance, intention, and personal growth.",
 		services: ["Positioning", "Brand Identity", "Visual System", "Guidelines"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203401/freedom27-logo_fo2rl8.jpg",
@@ -91,7 +91,7 @@ const projects: WorkItem[] = [
 		id: "pa-autors",
 		title: "Private Auto",
 		category: "social",
-		eyebrow: "Social · Content",
+		eyebrow: "Content · System",
 		resultLine: "A structured content system that keeps automotive communication consistent and credible.",
 		services: ["Content Direction", "Templates", "Production"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770204261/pa-social_voytwy.jpg",
@@ -100,8 +100,8 @@ const projects: WorkItem[] = [
 		id: "mnstudios",
 		title: "MN Studios",
 		category: "web",
-		eyebrow: "Web · Build",
-		resultLine: "A polished portfolio site designed to showcase craft, credibility, and completed work.",
+		eyebrow: "Positioning · Web",
+		resultLine: "A portfolio site designed to communicate credibility fast and convert interest into enquiries.",
 		services: ["Design", "Development", "SEO"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770204236/mnstudios-web_eo2cnh.jpg",
 		featured: true,
@@ -111,7 +111,7 @@ const projects: WorkItem[] = [
 		id: "luambo",
 		title: "Luambo",
 		category: "branding",
-		eyebrow: "Branding · Identity",
+		eyebrow: "Positioning · Identity",
 		resultLine: "A playful, expressive identity built to spark imagination in child-focused environments.",
 		services: ["Brand Identity", "Logo Design", "Visual Language"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203469/luambo-logo_csbacz.jpg",
@@ -121,7 +121,7 @@ const projects: WorkItem[] = [
 		id: "freedom27",
 		title: "Freedom 27",
 		category: "web",
-		eyebrow: "Web · Build",
+		eyebrow: "Positioning · Build",
 		resultLine: "A considered digital home designed to reflect calm, clarity, and intentional living.",
 		services: ["Design", "Development", "SEO"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203474/freedom27-web_aex03x.jpg",
@@ -132,7 +132,7 @@ const projects: WorkItem[] = [
 		id: "broerwelas",
 		title: "Broerwelas",
 		category: "branding",
-		eyebrow: "Branding · Identity",
+		eyebrow: "Positioning · Identity",
 		resultLine: "A bold, character-led identity designed to feel distinctive and instantly recognisable.",
 		services: ["Brand Identity", "Logo Design", "Visual Language"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770202765/broerwelas-logo_gjggt1.jpg",
@@ -142,7 +142,7 @@ const projects: WorkItem[] = [
 		id: "wertutors-social",
 		title: "WeRTutors Social Media",
 		category: "social",
-		eyebrow: "Social · Content",
+		eyebrow: "Content · System",
 		resultLine: "An educational content system built to inform parents and support student success.",
 		services: ["Content Direction", "Templates", "Production"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770204243/wertutors-social_kzgudp.jpg",
@@ -151,8 +151,8 @@ const projects: WorkItem[] = [
 		id: "csresources",
 		title: "CS Resources",
 		category: "web",
-		eyebrow: "Web · Build",
-		resultLine: "A clear, conversion-focused website for a growing industrial services business.",
+		eyebrow: "Positioning · Web",
+		resultLine: "A conversion-focused website built to improve credibility and drive enquiries for a growing industrial services team.",
 		services: ["Design", "Development", "SEO"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770202769/csresources-web_bw6snz.jpg",
 		featured: true,
@@ -162,7 +162,7 @@ const projects: WorkItem[] = [
 		id: "freedom-social",
 		title: "Freedom27 Social Media",
 		category: "social",
-		eyebrow: "Social · Content",
+		eyebrow: "Content · System",
 		resultLine: "A calm, cohesive social presence aligned with the brand’s wellness-led philosophy.",
 		services: ["Content Direction", "Templates", "Production"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203463/freedom27-social_cppq8y.jpg",
@@ -173,7 +173,7 @@ const tabs = [
 	{ key: "all" as const, label: "All work" },
 	{ key: "web" as const, label: "Web" },
 	{ key: "branding" as const, label: "Branding" },
-	{ key: "social" as const, label: "Social" },
+	{ key: "social" as const, label: "Content" },
 ];
 
 
@@ -282,7 +282,18 @@ function Modal({
 									))}
 								</div>
 							</div>
-
+							<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+								{[
+									{ k: "Challenge", v: "Unclear messaging and a digital presence that didn’t reflect the level of the business." },
+									{ k: "Shift", v: "Clarified positioning and redesigned the experience for faster trust and clearer conversion." },
+									{ k: "Result", v: "A cleaner system that improves credibility and makes enquiries easier." },
+								].map((x) => (
+									<div key={x.k} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+										<p className="text-[11px] tracking-[0.35em] uppercase text-white/55">{x.k}</p>
+										<p className="mt-2 text-sm text-white/65 leading-relaxed">{x.v}</p>
+									</div>
+								))}
+							</div>
 							<button
 								onClick={onClose}
 								className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition"
@@ -361,10 +372,10 @@ export default function WorkPage() {
 				<div className="relative mx-auto container px-6 pt-10 md:pt-28 pb-10">
 					<p className="text-[11px] tracking-[0.35em] uppercase text-white/60">Work</p>
 					<h1 className="mt-5 text-4xl md:text-6xl font-medium leading-[0.98] tracking-[-0.02em] text-white max-w-4xl">
-						A few projects we’re proud of.
+						Selected work, built for clarity and conversion.
 					</h1>
 					<p className="mt-6 text-white/65 leading-relaxed max-w-2xl">
-						Strategy-led design and build, delivered with clarity. Explore websites, identity work, and content systems.
+						A few examples of how we help growing teams upgrade positioning, elevate credibility, and build digital systems that convert.
 					</p>
 				</div>
 			</section>
@@ -382,7 +393,7 @@ export default function WorkPage() {
 							</h2>
 						</div>
 
-						<div className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] p-1 backdrop-blur">
+						<div className="inline-flex items-center rounded-full border border-cyan-400/10 bg-white/[0.03] p-1 backdrop-blur">
 							{tabs.map((t) => {
 								const isActive = active === t.key;
 								return (
@@ -391,7 +402,7 @@ export default function WorkPage() {
 										onClick={() => setActive(t.key)}
 										className={[
 											"rounded-full px-4 py-2 text-sm transition",
-											isActive ? "bg-white text-black" : "text-white/70 hover:text-white",
+											isActive ? "bg-cyan-400 text-white" : "text-white/70 hover:text-white",
 										].join(" ")}
 									>
 										{t.label}
@@ -409,6 +420,44 @@ export default function WorkPage() {
 				</div>
 			</section>
 
+			<section className="relative py-10 md:py-12">
+				<div className="mx-auto container px-6">
+					<div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-10 backdrop-blur-xl">
+						<div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+							<div className="max-w-xl">
+								<p className="text-[11px] tracking-[0.35em] uppercase text-cyan-400/60">
+									What we optimise for
+								</p>
+								<h3 className="mt-4 text-2xl md:text-3xl font-medium tracking-[-0.02em] text-white">
+									Clarity, credibility, conversion.
+								</h3>
+								<p className="mt-4 text-white/65 leading-relaxed">
+									Across every project, the goal is the same: communicate value faster,
+									build trust sooner, and create systems that support real growth.
+								</p>
+							</div>
+
+							<ul className="space-y-3 text-sm md:text-[15px] text-white/75">
+								{[
+									"Sharper positioning and messaging",
+									"Premium brand and digital presence",
+									"Clear journeys and conversion paths",
+									"Performance-led design and development",
+									"Systems that stay consistent over time",
+								].map((item) => (
+									<li key={item} className="flex gap-3">
+										<span className="mt-1.5 h-2 w-2 rounded-full bg-cyan-400/40 shrink-0" />
+										<span className="leading-relaxed">{item}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+
+						<div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10" />
+					</div>
+				</div>
+			</section>
+
 			{/* CTA */}
 			<section className="relative py-16 md:py-20">
 				<div className="mx-auto container px-6">
@@ -419,12 +468,12 @@ export default function WorkPage() {
 
 						<div className="relative z-10 px-8 py-14 md:px-14 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
 							<div className="max-w-2xl">
-								<p className="text-[11px] tracking-[0.35em] uppercase text-white/60">Work with Circle</p>
+								<p className="text-[11px] tracking-[0.35em] uppercase text-cyan-400/60">Work with Circle</p>
 								<h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.02em] text-white">
-									Ready to build something considered?
+									Ready to upgrade your brand and make it convert?
 								</h2>
 								<p className="mt-4 text-white/65 leading-relaxed">
-									We partner with brands that value clarity, craft, and long-term thinking.
+									We help growing teams reposition with clarity, elevate credibility, and build digital systems that support real acquisition.
 								</p>
 							</div>
 
@@ -444,6 +493,8 @@ export default function WorkPage() {
 			</section>
 
 			<Modal open={!!selected} onClose={() => setSelected(null)} item={selected} />
+
+
 		</MainLayout>
 	);
 }

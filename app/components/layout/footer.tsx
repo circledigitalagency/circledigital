@@ -20,8 +20,8 @@ export default function Footer() {
 				<div className="grid grid-cols-1 md:grid-cols-12 gap-10">
 					{/* Brand */}
 					<div className="md:col-span-5">
-						<p className="max-w-md text-white/60 leading-relaxed">
-							A creative studio building considered brands and high-performance digital experiences.
+						<p className="max-w-md font-bold text-white/60 leading-relaxed">
+							Your Digital Growth Partner
 						</p>
 					</div>
 
@@ -32,9 +32,9 @@ export default function Footer() {
 								Services
 							</p>
 							<div className="space-y-2 flex flex-col">
-								<FooterLink href="/branding">Branding</FooterLink>
-								<FooterLink href="/development">Development</FooterLink>
-								<FooterLink href="/social">Social Media</FooterLink>
+								<FooterLink href="/branding">Brand Positioning</FooterLink>
+								<FooterLink href="/development">Websites</FooterLink>
+								<FooterLink href="/social">Content Systems</FooterLink>
 							</div>
 						</div>
 

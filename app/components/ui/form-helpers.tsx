@@ -1,6 +1,6 @@
 export function FieldLabel({ children }: { children: React.ReactNode }) {
     return (
-        <p className="text-[11px] tracking-[0.35em] uppercase text-white/60">
+        <p className="text-[11px] tracking-[0.35em] uppercase text-cyan-400/60">
             {children}
         </p>
     );

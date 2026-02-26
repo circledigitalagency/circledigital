@@ -11,10 +11,10 @@ import { variants } from "~/lib/animations";
 import type { MetaFunction } from "@remix-run/node";
 
 const HOME_TITLE =
-	"Circle Digital — Branding, Web Development & Social Media in South Africa";
+	"Circle Digital — Brand Repositioning & Websites for Growing Businesses";
 
 const HOME_DESCRIPTION =
-	"Circle Digital is a creative studio building strategy-led branding, high-performance websites, and content systems for modern brands. Built with clarity, craft, and long-term thinking.";
+	"Circle Digital helps growing businesses reposition their brand with clearer messaging, premium design, and high-performance websites built to convert. Based in South Africa.";
 
 const HOME_IMAGE =
 	"https://res.cloudinary.com/dfxorvtuc/image/upload/v1770285768/Screenshot_2026-02-05_at_12.01.48_gcryfg.png";
@@ -52,9 +52,10 @@ const projects: WorkItem[] = [
 		id: "wertutors",
 		title: "WeRTutors",
 		category: "web",
-		eyebrow: "Web · Build",
-		resultLine: "A clear, parent-focused website designed to build trust and drive enquiries.",
-		services: ["Re-design", "Brand Refresh", "Development"],
+		eyebrow: "Repositioning · Web",
+		resultLine:
+			"Repositioned the brand to speak to professional educators and parents — clarifying messaging and building a website designed to drive consistent enquiries.",
+		services: ["Brand Positioning", "Identity Refresh", "Website Build"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770204255/wertutors-hero_agbs4a.jpg",
 		featured: true,
 		liveUrl: "https://wertutors.co.za/",
@@ -63,9 +64,10 @@ const projects: WorkItem[] = [
 		id: "easyfind",
 		title: "Easyfind",
 		category: "web",
-		eyebrow: "Web · Build",
-		resultLine: "A clean, professional web presence that simplifies a technical offering for everyday users.",
-		services: ["Re-design", "Brand Refresh", "Development"],
+		eyebrow: "Repositioning · Web",
+		resultLine:
+			"Clarified a technical offering through sharper positioning and a website built to improve credibility and acquisition.",
+		services: ["Brand Refresh", "Messaging Clarity", "Website Build"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203465/easyfind-web_o8r7xw.jpg",
 		featured: true,
 		liveUrl: "https://easyfindtech.co.za/",
@@ -114,11 +116,11 @@ export default function Index() {
 							variants={variants.fadeUp}
 							className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-white/90 backdrop-blur-sm sm:gap-2 sm:px-4 sm:py-2 sm:text-[10px] sm:tracking-[0.35em] md:text-[11px]"
 						>
-							<span>Branding</span>
+							<span>Brand Positioning</span>
 							<span className="opacity-30">•</span>
-							<span>Development</span>
+							<span>Websites</span>
 							<span className="opacity-30">•</span>
-							<span>Social Media</span>
+							<span>Content Systems</span>
 						</motion.p>
 
 						{/* Headline */}
@@ -126,17 +128,17 @@ export default function Index() {
 							variants={variants.fadeUp}
 							className="mt-4 text-4xl font-medium leading-[1.05] tracking-[-0.02em] text-white sm:mt-5 sm:text-4xl sm:leading-[1.02] md:mt-6 md:text-6xl md:leading-[0.98] lg:text-7xl"
 						>
-							<span className="text-balance">We craft digital experiences</span>
-							<span className="mt-0.5 block text-white/85 sm:mt-1">that elevate your brand</span>
+							<span className="text-balance">Your business outgrew its brand.</span>
+							<span className="mt-0.5 block text-white/85 sm:mt-1">We help you catch up, with clarity and credibility.</span>
 						</motion.h1>
 
 						{/* Subcopy */}
 						<motion.p
 							variants={variants.fadeUp}
-							className="mx-auto mt-3 max-w-[42rem] px-2 text-pretty leading-relaxed text-white/80 sm:mt-4 text-base md:mt-5 md:text-lg"
+							className="mx-auto mt-3 max-w-[55rem] px-2 text-pretty leading-relaxed text-white/80 sm:mt-4 text-base md:mt-5 md:text-2xl"
 						>
-							Strategy-led branding, high-performance development, and social systems built for
-							growth.
+							We reposition growing businesses with sharper messaging, premium design, and digital systems
+							built to convert.
 						</motion.p>
 
 						{/* CTAs */}
@@ -148,7 +150,7 @@ export default function Index() {
 								href="/contact-us"
 								className="inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:bg-white/90 transition"
 							>
-								Get in Touch <ArrowUpRight className="ml-2 h-4 w-4" />
+								Request a Call <ArrowUpRight className="ml-2 h-4 w-4" />
 							</a>
 							<a
 								href="/work"
@@ -172,7 +174,7 @@ export default function Index() {
 								What we do, end-to-end.
 							</h2>
 							<p className="mt-4 text-white/65 leading-relaxed">
-								A small studio with a sharp process, built to help brands look better, work better, and grow.
+								Built for teams ready to look premium, communicate clearly, and turn attention into enquiries.
 							</p>
 						</div>
 
@@ -241,7 +243,8 @@ export default function Index() {
 									A few projects we’re proud of.
 								</h2>
 								<p className="mt-4 text-white/65 max-w-md leading-relaxed">
-									Strategy-led design and build, delivered with clarity. Here’s what it looks like in practice.
+									We design and build with clarity, so the right people trust you faster and take action sooner.
+									Here’s what it looks like in practice.
 								</p>
 							</div>
 
@@ -301,12 +304,12 @@ export default function Index() {
 									</p>
 
 									<h2 className="text-3xl md:text-4xl font-medium tracking-[-0.02em] text-white">
-										Ready to build something considered?
+										Ready to look like the business you’ve become?
 									</h2>
 
 									<p className="text-white/65 leading-relaxed">
-										We partner with brands that value clarity, craft, and long-term thinking -
-										helping turn ideas into digital systems that last.
+										We help growing teams upgrade positioning, elevate credibility, and build digital systems that
+										support real acquisition — from first impression to enquiry.
 									</p>
 								</div>
 

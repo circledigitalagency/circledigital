@@ -11,10 +11,10 @@ import { sendContactEmails } from "~/lib/email.server";
 import type { MetaFunction } from "@remix-run/node";
 
 const CONTACT_TITLE =
-	"Contact Circle Digital | Start a Branding, Web or Content Project";
+	"Contact Circle Digital | Start a Repositioning, Website or Content System";
 
 const CONTACT_DESCRIPTION =
-	"Tell Circle Digital what you’re building and what success looks like. We’ll respond with clear next steps within 1–2 business days.";
+	"Tell Circle Digital what you're building and what success looks like. We'll reply with recommended next steps and a clear scope within 1–2 business days.";
 
 const CONTACT_IMAGE =
 	"https://res.cloudinary.com/dfxorvtuc/image/upload/v1770293889/Screenshot_2026-02-05_at_14.17.59_keahoy.png";
@@ -205,10 +205,11 @@ export default function ContactPage() {
 				<div className="relative mx-auto container px-6 pt-24 md:pt-28 pb-12">
 					<p className="text-[11px] tracking-[0.35em] uppercase text-white/60">Contact</p>
 					<h1 className="mt-5 text-4xl md:text-6xl font-medium leading-[0.98] tracking-[-0.02em] text-white max-w-4xl">
-						Let’s build something considered.
+						Let’s upgrade your brand and make it convert.
 					</h1>
 					<p className="mt-6 text-white/65 leading-relaxed max-w-2xl">
-						Tell us what you’re working on and what “success” looks like. We’ll reply with clear next steps.
+						Tell us what you’re building and what success looks like. We’ll respond with a recommended approach,
+						clear scope, and next steps.
 					</p>
 				</div>
 			</section>
@@ -226,10 +227,10 @@ export default function ContactPage() {
 											<div>
 												<FieldLabel>Project intake</FieldLabel>
 												<h2 className="mt-4 text-2xl md:text-3xl font-medium tracking-[-0.02em] text-white">
-													Tell us the basics.
+													Help us scope it properly.
 												</h2>
 												<p className="mt-3 text-white/65 leading-relaxed max-w-2xl">
-													The more context you share, the faster we can respond with an accurate scope.
+													Share the context and we’ll come back with an accurate scope, timeline, and recommended next step.
 												</p>
 											</div>
 										</div>
@@ -348,12 +349,12 @@ export default function ContactPage() {
 
 											{/* Goals */}
 											<div className="space-y-2">
-												<FieldLabel>What are we building — and why?</FieldLabel>
+												<FieldLabel>What are we building and what should it achieve?</FieldLabel>
 												<TextArea
 													name="goals"
 													value={form.goals}
 													onChange={(e) => update("goals", e.target.value)}
-													placeholder="Example: We need a website that communicates our offer clearly and increases enquiries…"
+													placeholder="Example: We’re repositioning and need clearer messaging + a website that increases enquiries. Audience: … Current problem: … Success looks like: …"
 													aria-invalid={!!fieldError("goals")}
 												/>
 												{fieldError("goals") ? (
@@ -368,7 +369,7 @@ export default function ContactPage() {
 													name="notes"
 													value={form.notes}
 													onChange={(e) => update("notes", e.target.value)}
-													placeholder="Anything that helps: audience, constraints, content readiness…"
+													placeholder="Anything helpful: audience, key competitors, constraints, decision-makers, content readiness…"
 													aria-invalid={!!fieldError("notes")}
 												/>
 												{fieldError("notes") ? (
@@ -445,13 +446,13 @@ export default function ContactPage() {
 						<div className="lg:col-span-4 space-y-6">
 							<Card className="p-6">
 								<FieldLabel>Good to know</FieldLabel>
-								<h3 className="mt-4 text-lg font-medium text-white">What makes projects go smoothly</h3>
+								<h3 className="mt-4 text-lg font-medium text-white">What makes projects run smoothly</h3>
 								<ul className="mt-4 space-y-3 text-sm text-white/65">
 									{[
-										"A clear goal (what success means to you)",
-										"Access to existing brand assets (if any)",
-										"Content readiness (or we can help plan it)",
-										"One decision-maker for feedback",
+										"A clear goal (what conversion/success means)",
+										"Current links/assets (website, socials, brand files)",
+										"Content readiness (or we plan it with you)",
+										"One decision-maker for feedback and approvals",
 									].map((t) => (
 										<li key={t} className="flex gap-2">
 											<span className="mt-[7px] h-1 w-1 rounded-full bg-white/40" />
@@ -472,7 +473,7 @@ export default function ContactPage() {
 										</div>
 										<div>
 											<p className="text-white/80 font-medium">Email</p>
-											<p className="text-white/60">operations@circledigital.co.za</p>
+											<a href="mailto:operations@circledigital.co.za" className="text-white/60">operations@circledigital.co.za</a>
 										</div>
 									</div>
 
@@ -482,7 +483,7 @@ export default function ContactPage() {
 										</div>
 										<div>
 											<p className="text-white/80 font-medium">Phone</p>
-											<p className="text-white/60">+27 82 888 9494</p>
+											<a href="tel:+27828889494" className="text-white/60">+27 82 888 9494</a>
 										</div>
 									</div>
 
