@@ -79,7 +79,7 @@ export default function SocialMediaPage() {
                 <img
                     src="https://res.cloudinary.com/dfxorvtuc/image/upload/v1770202766/social-hero_kwogrp.jpg"
                     alt="Abstract 3D metallic sculpture"
-                    className="absolute -inset-0.5 h-[calc(100%+4px)] w-[calc(100%+4px)] object-cover object-center"
+                    className="absolute -inset-0.5 h-[calc(100%+4px)] w-[calc(100%+4px)] object-cover object-center transform -scale-x-100"
                 />
                 <div
                     className="absolute inset-0"
@@ -97,10 +97,10 @@ export default function SocialMediaPage() {
                     </p>
 
                     <h1 className="mt-5 text-4xl md:text-6xl font-medium leading-[0.98] tracking-[-0.02em] text-white max-w-4xl">
-                        Content systems built for authority — not trends.
+                        Content systems built for authority not trends.
                     </h1>
 
-                    <p className="mt-6 text-white/65 leading-relaxed max-w-2xl text-lg">
+                    <p className="mt-6 text-white leading-relaxed max-w-2xl text-lg">
                         We help brands show up with clarity and consistency through planned production, high-quality content,
                         and social systems designed to build trust and drive measurable acquisition.
                     </p>
@@ -200,7 +200,7 @@ export default function SocialMediaPage() {
                                     What this gives you
                                 </p>
                                 <h3 className="mt-4 text-2xl md:text-3xl font-medium tracking-[-0.02em] text-white">
-                                    Content that builds authority — and supports acquisition.
+                                    Content that builds authority and supports acquisition.
                                 </h3>
                                 <p className="mt-4 text-white/65 leading-relaxed">
                                     When content is structured and intentional, it does more than fill a feed.
@@ -245,7 +245,7 @@ export default function SocialMediaPage() {
                                     "You want content that matches your positioning and credibility",
                                     "You’re ready to plan shoots and campaigns with intention",
                                     "You value quality, clarity, and consistency over volume",
-                                    "You want a system — not reactive posting",
+                                    "You want a system not reactive posting",
                                 ].map((t) => (
                                     <li key={t} className="flex gap-2">
                                         <span className="mt-[7px] h-1 w-1 rounded-full bg-emerald-400" />

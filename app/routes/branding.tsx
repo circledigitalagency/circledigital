@@ -79,7 +79,7 @@ export default function BrandingPage() {
                 <img
                     src="https://res.cloudinary.com/dfxorvtuc/image/upload/v1770202766/branding-hero_wvq666.jpg"
                     alt="Abstract 3D metallic sculpture"
-                    className="absolute -inset-0.5 h-[calc(100%+4px)] w-[calc(100%+4px)] object-cover object-center"
+                    className="absolute -inset-0.5 h-[calc(100%+4px)] w-[calc(100%+4px)] object-cover object-center transform -scale-x-100"
                 />
                 <div
                     className="absolute inset-0"
@@ -95,7 +95,7 @@ export default function BrandingPage() {
                     <p className="text-[11px] tracking-[0.35em] uppercase text-white/60">Branding</p>
 
                     <h1 className="mt-5 text-4xl md:text-6xl font-medium leading-[0.98] tracking-[-0.02em] text-white max-w-4xl">
-                        Brand repositioning that upgrades credibility — not just aesthetics.
+                        Brand repositioning that upgrades credibility not just aesthetics.
                     </h1>
 
                     <p className="mt-6 text-white/65 leading-relaxed max-w-2xl text-lg">

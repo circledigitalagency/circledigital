@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link, useNavigate, useNavigation } from "@remix-run/react";
 import MainLayout from "~/components/layout/main";
 import { services } from "~/lib/data";
 import { AccentGlow, categoryAccent } from "~/lib/utils";
@@ -54,7 +54,7 @@ const projects: WorkItem[] = [
 		category: "web",
 		eyebrow: "Repositioning · Web",
 		resultLine:
-			"Repositioned the brand to speak to professional educators and parents — clarifying messaging and building a website designed to drive consistent enquiries.",
+			"Repositioned the brand to speak to professional educators and parents, clarifying messaging and building a website designed to drive consistent enquiries.",
 		services: ["Brand Positioning", "Identity Refresh", "Website Build"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770204255/wertutors-hero_agbs4a.jpg",
 		featured: true,
@@ -75,6 +75,7 @@ const projects: WorkItem[] = [
 ]
 
 export default function Index() {
+	const navigate = useNavigate()
 
 	return (
 		<MainLayout>
@@ -262,7 +263,7 @@ export default function Index() {
 						{/* Right cards */}
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 							{projects.map((item) => (
-								<WorkCard key={item.id} item={item} onOpen={() => { }} />
+								<WorkCard key={item.id} item={item} onOpen={() => { navigate("/work") }} isHome={true} />
 							))}
 						</div>
 					</div>
@@ -309,7 +310,7 @@ export default function Index() {
 
 									<p className="text-white/65 leading-relaxed">
 										We help growing teams upgrade positioning, elevate credibility, and build digital systems that
-										support real acquisition — from first impression to enquiry.
+										support real acquisition from first impression to enquiry.
 									</p>
 								</div>
 

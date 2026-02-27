@@ -131,7 +131,7 @@ export default function About() {
 								Many teams do great work but their brand, website, and messaging still reflect an earlier stage. The result is inconsistency: mixed signals, slower trust, and missed opportunities. Circle exists to close that gap through repositioning and systems that hold up over time.
 							</p>
 							<p>
-								We work as a small senior team: one side focused on positioning, messaging, and brand direction — the other on building fast, scalable digital experiences that support real acquisition.
+								We work as a small senior team: one side focused on positioning, messaging, and brand direction - the other on building fast, scalable digital experiences that support real acquisition.
 							</p>
 						</div>
 					</div>

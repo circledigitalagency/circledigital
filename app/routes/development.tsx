@@ -80,7 +80,7 @@ export default function DevelopmentPage() {
                 <img
                     src="https://res.cloudinary.com/dfxorvtuc/image/upload/v1770202767/web-hero_ezwo2o.jpg"
                     alt="Abstract 3D metallic sculpture"
-                    className="absolute -inset-0.5 h-[calc(100%+4px)] w-[calc(100%+4px)] object-cover object-center"
+                    className="absolute -inset-0.5 h-[calc(100%+4px)] w-[calc(100%+4px)] object-cover object-center transform -scale-x-100"
                 />
                 <div
                     className="absolute inset-0"

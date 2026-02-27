@@ -185,7 +185,7 @@ function Chip({ children }: { children: React.ReactNode }) {
 	);
 }
 
-export function WorkCard({ item, onOpen }: { item: WorkItem; onOpen: () => void }) {
+export function WorkCard({ item, onOpen, isHome = false }: { item: WorkItem; onOpen: () => void; isHome?: Boolean }) {
 	return (
 		<button
 			type="button"
@@ -225,15 +225,16 @@ export function WorkCard({ item, onOpen }: { item: WorkItem; onOpen: () => void 
 							</span>
 						))}
 					</div>
-
-					<div className="mt-6 flex items-center justify-between">
+					{!isHome && <div className="mt-6 flex items-center justify-between">
 						<span className="text-sm font-medium text-white/80 group-hover:text-white transition">
 							View details <span className="ml-2 opacity-60 group-hover:opacity-100">→</span>
 						</span>
 						<span className="text-[11px] tracking-[0.35em] uppercase text-white/45">
 							{item.category}
 						</span>
-					</div>
+					</div>}
+
+
 				</div>
 			</div>
 		</button>
@@ -252,7 +253,7 @@ function Modal({
 	if (!open || !item) return null;
 
 	return (
-		<div className="fixed inset-0 z-50">
+		<div className="fixed inset-0 z-50 overflow-x-auto">
 			<div className="absolute inset-0 bg-black/70" onClick={onClose} />
 			<div className="absolute inset-x-0 top-10 mx-auto w-[min(980px,92vw)]">
 				<div className="relative overflow-hidden rounded-3xl border border-white/10 bg-background/70 backdrop-blur-2xl">
@@ -282,18 +283,6 @@ function Modal({
 									))}
 								</div>
 							</div>
-							<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-								{[
-									{ k: "Challenge", v: "Unclear messaging and a digital presence that didn’t reflect the level of the business." },
-									{ k: "Shift", v: "Clarified positioning and redesigned the experience for faster trust and clearer conversion." },
-									{ k: "Result", v: "A cleaner system that improves credibility and makes enquiries easier." },
-								].map((x) => (
-									<div key={x.k} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-										<p className="text-[11px] tracking-[0.35em] uppercase text-white/55">{x.k}</p>
-										<p className="mt-2 text-sm text-white/65 leading-relaxed">{x.v}</p>
-									</div>
-								))}
-							</div>
 							<button
 								onClick={onClose}
 								className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition"
@@ -313,6 +302,19 @@ function Modal({
 								<div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/40" />
 							</div>
 						</div>
+						{/* 
+						<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+							{[
+								{ k: "Challenge", v: "Unclear messaging and a digital presence that didn’t reflect the level of the business." },
+								{ k: "Shift", v: "Clarified positioning and redesigned the experience for faster trust and clearer conversion." },
+								{ k: "Result", v: "A cleaner system that improves credibility and makes enquiries easier." },
+							].map((x) => (
+								<div key={x.k} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+									<p className="text-[11px] tracking-[0.35em] uppercase text-white/55">{x.k}</p>
+									<p className="mt-2 text-sm text-white/65 leading-relaxed">{x.v}</p>
+								</div>
+							))}
+						</div> */}
 
 						<div className="mt-7 flex flex-col sm:flex-row gap-3 justify-end">
 							{item.liveUrl ? (
