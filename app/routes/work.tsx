@@ -56,6 +56,27 @@ export type WorkItem = {
 
 const projects: WorkItem[] = [
 	{
+		id: "imaraps",
+		title: "IMARA Project Services",
+		category: "web",
+		eyebrow: "Positioning · Web",
+		resultLine: "A structured website that positions IMARA as a credible project services partner and converts visitor interest into qualified enquiries.",
+		services: ["Design", "Development", "SEO"],
+		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1773655486/KagisoJoan_Portfolio_Presentation_bempuj.png",
+		featured: true,
+		liveUrl: "https://imaraps.co.za/",
+	},
+	{
+		id: "easyfindplatform",
+		title: "EasyFind Tech",
+		category: "platform",
+		eyebrow: "Recruitment Infrastructure · Build",
+		resultLine: "A custom recruitment platform designed to source, organise, and manage candidate applications at scale.",
+		services: ["Product Architecture", "UX Design", "Platform Development", "Database Design"],
+		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1773657192/Circle_Digital_Business_Profile_1_f3e2e2.svg",
+		featured: true
+	},
+	{
 		id: "wertutors",
 		title: "WeRTutors",
 		category: "web",
@@ -88,6 +109,16 @@ const projects: WorkItem[] = [
 		featured: true,
 	},
 	{
+		id: "ttcsaportal",
+		title: "Tourism Transformation Council of South Africa (TTCSA)",
+		category: "platform",
+		eyebrow: "Client Infrastructure · Automation",
+		resultLine: "A digital onboarding portal designed to streamline applications and support scalable tourism transformation initiatives.",
+		services: ["System Architecture", "UX Design", "Development", "Workflow Automation"],
+		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1773657630/KagisoJoan_Portfolio_Presentation_3_jsw8tu.png",
+		featured: true
+	},
+	{
 		id: "pa-autors",
 		title: "Private Auto",
 		category: "social",
@@ -116,6 +147,17 @@ const projects: WorkItem[] = [
 		services: ["Brand Identity", "Logo Design", "Visual Language"],
 		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203469/luambo-logo_csbacz.jpg",
 		featured: false,
+	},
+	{
+		id: "ttcsaweb",
+		title: "Tourism Transformation Council of South Africa (TTCSA)",
+		category: "web",
+		eyebrow: "Institutional Presence · Build",
+		resultLine: "A modern institutional website designed to improve visibility, accessibility, and communication around TTCSA’s transformation mandate.",
+		services: ["Re-design", "Development", "Digital Strategy"],
+		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1773656628/KagisoJoan_Portfolio_Presentation_2_dvkm6h.png",
+		featured: true,
+		liveUrl: "https://ttcsa.org.za/",
 	},
 	{
 		id: "freedom27",
@@ -165,12 +207,13 @@ const projects: WorkItem[] = [
 		eyebrow: "Content · System",
 		resultLine: "A calm, cohesive social presence aligned with the brand’s wellness-led philosophy.",
 		services: ["Content Direction", "Templates", "Production"],
-		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1770203463/freedom27-social_cppq8y.jpg",
+		cover: "https://res.cloudinary.com/dfxorvtuc/image/upload/v1773656278/KagisoJoan_Portfolio_Presentation_k5gtym.jpg",
 	},
 ];
 
 const tabs = [
 	{ key: "all" as const, label: "All work" },
+	{ key: "platform" as const, label: "Platform" },
 	{ key: "web" as const, label: "Web" },
 	{ key: "branding" as const, label: "Branding" },
 	{ key: "social" as const, label: "Content" },
@@ -212,8 +255,8 @@ export function WorkCard({ item, onOpen, isHome = false }: { item: WorkItem; onO
 
 				{/* Meta */}
 				<div className="relative p-6">
-					<h3 className="text-lg font-medium text-white">{item.title}</h3>
-					<p className="mt-2 text-sm text-white/65 leading-relaxed">{item.resultLine}</p>
+					<h3 className="text-lg font-medium text-white line-clamp-1">{item.title}</h3>
+					<p className="mt-2 text-sm text-white/65 leading-relaxed line-clamp-2">{item.resultLine}</p>
 
 					<div className="mt-5 flex flex-wrap gap-2">
 						{item.services.slice(0, 3).map((s) => (
@@ -297,7 +340,7 @@ function Modal({
 								<img
 									src={item.cover}
 									alt={item.title}
-									className="h-full w-full object-cover"
+									className="h-full w-full object-contain"
 								/>
 								<div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/40" />
 							</div>

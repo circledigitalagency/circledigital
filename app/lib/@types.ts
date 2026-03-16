@@ -21,4 +21,4 @@ export const ACCENT = {
 	social: "rgba(90, 220, 200, 0.45)", // teal
 };
 
-export type WorkCategory = "web" | "branding" | "social";
+export type WorkCategory = "web" | "branding" | "social" | "platform";
