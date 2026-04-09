@@ -212,10 +212,10 @@ const projects: WorkItem[] = [
 ];
 
 const tabs = [
-	{ key: "all" as const, label: "All work" },
-	{ key: "platform" as const, label: "Platform" },
+	// { key: "all" as const, label: "All work" },
 	{ key: "web" as const, label: "Web" },
 	{ key: "branding" as const, label: "Branding" },
+	{ key: "platform" as const, label: "Platform" },
 	{ key: "social" as const, label: "Content" },
 ];
 
@@ -388,12 +388,12 @@ function Modal({
 }
 
 export default function WorkPage() {
-	const [active, setActive] = React.useState<(typeof tabs)[number]["key"]>("all");
+	const [active, setActive] = React.useState<(typeof tabs)[number]["key"]>("web");
 	const [selected, setSelected] = React.useState<WorkItem | null>(null);
 
 	const featured = projects.filter((p) => p.featured);
 	const filtered =
-		active === "all" ? projects : projects.filter((p) => p.category === active);
+		active === "web" ? projects : projects.filter((p) => p.category === active);
 
 	return (
 		<MainLayout>
